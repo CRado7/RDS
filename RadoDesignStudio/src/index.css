@@ -6,7 +6,7 @@
   --color-main: #111111;
   --color-secondary: #d6d6d6;
   --color-accent: #08FFAD;
-  --color-muted-accent: #08ffad8d;
+  --color-muted-accent: rgba(8, 255, 173, 0.05);
 
   color-scheme: light dark;
   color: var(--color-secondary);
@@ -18,14 +18,64 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: absolute;
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
+}
+
+.image {
+  position: relative;
+  left: 0;
+  isolation: isolate;
+  height: 100dvh;
+  width: 100dvw;
+  background-color: #111; /* fallback background */
+  overflow: scroll;
+}
+
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  background-color: #3f3f3f;
+  mix-blend-mode: overlay;
+  z-index: 0;
+  overflow: scroll;
+}
+/* 
+.page-content {
+  transform: translateY(12dvh);
+} */
+
+.background-dark {
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  display: flex;            /* enable flexbox */
+  align-items: center;      /* vertical align */
+  justify-content: center;  /* horizontal align */
+  text-align: center;
+  z-index: 5;
+}
+
+.hero {
+  top: 0;
+  left: 0;
+}
+
+.footer {
+  bottom: 0;
+  left: 0;
 }
 
 a {
@@ -37,7 +87,7 @@ a {
 }
 a:hover {
   color: var(--color-accent);
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -50,9 +100,46 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--color-main);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+span.bold {
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--color-main);
+}
+
+.hot-link {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem;
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-weight: 600;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateX(4px);
+    color: var(--color-accent);
+  }
+}
+
+
+.contact-link:hover {
+  transform: translateX(4px); /* moves right */
+}
+
+@media (max-width: 720px) {
+  .background-dark {
+    position: absolute;
+  }
 }

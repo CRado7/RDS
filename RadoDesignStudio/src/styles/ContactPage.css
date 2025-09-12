@@ -1,0 +1,58 @@
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  background-color: var(--color-main);
+}
+
+.contact-tagline {
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--color-secondary);
+  text-align: center;
+  margin-top: 200px;
+}
+
+/* Base link styles */
+.contact-container a {
+  font-size: 3rem;
+  font-weight: 600;
+  width: 150px;
+  color: var(--color-secondary);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  transition: transform 0.3s ease;
+  border-left: var(--color-accent) 4px solid;
+}
+
+/* Pseudo-element for background fill animation */
+.contact-container a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: rgba(8, 255, 173, 0.05);
+  z-index: 0;
+  transition: width 0.4s ease;
+}
+
+.contact-container a:hover::before {
+  width: 100%;
+}
+
+/* Keep text above pseudo-element */
+.contact-container a span, 
+.contact-container a * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-container a:hover {
+  transform: translateX(6px);
+}
