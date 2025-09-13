@@ -1,8 +1,13 @@
 import Reia from '../assets/reia/Reia-Thumbnail.png';
+    import ReiaBanner from '../assets/reia/Reia-Banner.svg';
 import Crater from '../assets/crater/Crater-Thumbnail.png';
+    import CraterBanner from '../assets/crater/Crater-Banner.png';
 import TPS from '../assets/the-print-shop/TPS-Thumbnail.png';
+    import TPSBanner from '../assets/the-print-shop/TPS-Banner.svg';
 import DopeSouls from '../assets/dope-souls/DopeSouls-Thumbnail.svg';
+    import DopeSoulsBanner from '../assets/dope-souls/DopeSouls-Banner.svg';
 import ChungLi from '../assets/chung-li/ChungLi-Thumbnail.png';
+    import ChungLiBanner from '../assets/chung-li/ChungLi-Banner.svg';
 import CFF from '../assets/crooked-finger-flies/CFF-Thumbnail.png';
 import Parlor from '../assets/parlor/Parlor-Thumbnail.png';
 import TheHotBox from '../assets/the-hot-box/TheHotBox-Thumbnail.png';
@@ -12,8 +17,10 @@ const projectData = [
     id: 1,
     title: "Reia",
     description:
-      "Reia is a medical device company based in Hanover, NH. Their flagship product is distributed globally and represents an upgraded approach to a widely used device.",
+      "Reia is a medical device company based in Hanover, NH. When they approached us, they were preparing to launch their first product and needed a website to showcase the device and its features. Since the launch of the website, Reia has grown to sell their product on a global level.",
     imageUrl: Reia,
+    banner: ReiaBanner,
+    mobileBanner: Reia,
     category: ["Web Design", "Web Development"],
     slug: "reia",
     recent: true,
@@ -21,24 +28,28 @@ const projectData = [
     content: {
         section: [
             {
-                title: "Homepage",
-                text: "The homepage features a clean, modern design with a focus on the product and its benefits. The use of white space and high-quality images helps to create a professional and trustworthy appearance.",
-                image: Reia,
-            },
-            {
-                title: "Product Page",
-                text: "The product page provides detailed information about the device, including its features, specifications, and usage instructions. The layout is organized and easy to navigate, with clear calls to action for purchasing or learning more.",
-                image: Reia,
-            },
-            {
-                title: "About Page",
-                text: "The about page tells the story of Reia, its mission, and the team behind the product. It includes testimonials from satisfied customers and highlights the company's commitment to quality and innovation.",
-                image: Reia,
-            },
-            {
-                title: "Contact Page",
-                text: "The contact page provides multiple ways for visitors to get in touch with the company, including a contact form, email address, and phone number. It also includes links to social media profiles for further engagement.",
-                image: Reia,
+                title: "Website Overview",
+                imageDisplay: "grid",
+                beforeAfter: false,
+                packageModel: false,
+                image: [
+                    {
+                        caption: "Home Page",
+                        src: Reia,
+                    },
+                    {
+                        caption: "Product Page",
+                        src: Reia,
+                    },
+                    {
+                        caption: "About Page",
+                        src: Reia,
+                    },
+                    {
+                        caption: "Contact Page",
+                        src: Reia,
+                    },
+                ]
             },
         ],
     },
@@ -49,6 +60,8 @@ const projectData = [
     description:
       "Crater is built for backcountry boarders and skiers—a brand that celebrates the outdoor lifestyle and the people who live it.",
     imageUrl: Crater,
+    banner: CraterBanner,
+    mobileBanner: Crater,
     category: ["Web Design", "Web Development", "Logo Design", "Print Design"],
     slug: "crater",
     recent: true,
@@ -57,18 +70,24 @@ const projectData = [
         section: [
             {
                 title: "Branding",
-                text: "The branding for Crater was designed to reflect the rugged and adventurous spirit of backcountry boarders and skiers. The logo features bold typography and a mountain-inspired icon, while the color palette includes earthy tones and vibrant accents.",
-                image: Crater,
+                imageDisplay: "inline-block",
+                beforeAfter: false,
+                packageModel: false,
+                image: [Crater],
             },
             {
                 title: "Website Design",
-                text: "The website design for Crater is clean and modern, with a focus on showcasing the brand's products and lifestyle imagery. The layout is user-friendly, with clear navigation and calls to action for exploring the product line and making purchases.",
-                image: Crater,
+                imageDisplay: "inline-block",
+                beforeAfter: false,
+                packageModel: false,
+                image: [Crater],
             },
             {
                 title: "Print Materials",
-                text: "The print materials for Crater include business cards, flyers, and posters that feature the brand's logo and color scheme. The designs are visually striking and effectively communicate the brand's identity and values.",
-                image: Crater,
+                imageDisplay: "inline-block",
+                beforeAfter: false,
+                packageModel: false,
+                image: [Crater],
             }
         ]
     },
@@ -79,6 +98,8 @@ const projectData = [
     description:
       "The Print Shop is a family-owned and operated screen printing and embroidery business located in Wilbraham, MA.",
     imageUrl: TPS,
+    banner: [TPSBanner],
+    mobileBanner: TPS,
     category: ["Web Design", "Web Development"],
     slug: "the-print-shop",
     recent: true,
@@ -86,24 +107,28 @@ const projectData = [
     content: {
         section: [
             {
-                title: "Homepage",
-                text: "The homepage features a vibrant and engaging design that highlights The Print Shop's services and showcases examples of their work. The use of bold colors and dynamic imagery helps to create an energetic and inviting atmosphere.",
-                image: TPS,
-            },
-            {
-                title: "Services Page",
-                text: "The services page provides detailed information about the various printing and embroidery options offered by The Print Shop. The layout is organized and easy to navigate, with clear descriptions and pricing information.",
-                image: TPS,
-            },
-            {
-                title: "Portfolio Page",
-                text: "The portfolio page showcases a selection of past projects completed by The Print Shop, including custom apparel, promotional items, and more. High-quality images and customer testimonials help to demonstrate the company's expertise and commitment to quality.",
-                image: TPS,
-            },
-            {
-                title: "Contact Page",
-                text: "The contact page provides multiple ways for visitors to get in touch with The Print Shop, including a contact form, email address, and phone number. It also includes a map and directions to the physical location.",
-                image: TPS,
+                title: "Website Overview",
+                imageDisplay: "",
+                beforeAfter: false,
+                packageModel: false,
+                image: [
+                    {
+                        caption: "Home Page",
+                        src: TPS,
+                    },
+                    {
+                        caption: "Services Page",
+                        src: TPS,
+                    },
+                    {
+                        caption: "Portfolio Page",
+                        src: TPS,
+                    },
+                    {
+                        caption: "Contact Page",
+                        src: TPS,
+                    },
+                ],
             },
         ],
     },
@@ -114,7 +139,9 @@ const projectData = [
     description:
       "Dope Souls is a lifestyle brand built around good vibes, surfing, and the ocean.",
     imageUrl: DopeSouls,
-    category: ["Branding", "Logo Design", "Print Design"],
+    banner: DopeSoulsBanner,
+    mobileBanner: DopeSouls,
+    category: ["Branding", "Logo Design", "Print Design", "Custom Art"],
     slug: "dope-souls-surf-club",
     recent: true,
     featured: false,
@@ -122,29 +149,68 @@ const projectData = [
         section: [
             {
                 title: "Logo Design",
-                text: "The logo for Dope Souls Surf Club features a playful and energetic design that captures the essence of the brand. The typography is bold and dynamic, while the icon incorporates elements of surfing and the ocean.",
-                image: DopeSouls,
+                imageDisplay: "inline-block",
+                beforeAfter: false,
+                packageModel: false,
+                image: [
+                    {
+                        caption: "Dope Souls Logo",
+                        src: DopeSouls,
+                    },
+                ],
             },
             {
-                title: "Branding",
-                text: "The branding for Dope Souls Surf Club includes a vibrant color palette, fun patterns, and a variety of graphic elements that reflect the laid-back and adventurous spirit of the surfing lifestyle.",
-                image: DopeSouls,
+                title: "Brand Consistent Mockups",
+                imageDisplay: "grid",
+                beforeAfter: false,
+                packageModel: false,
+                image: [
+                    {
+                        caption: "Mockup 1",
+                        src: DopeSouls,
+                    },
+                    {
+                        caption: "Mockup 2",
+                        src: DopeSouls,
+                    },
+                    {
+                        caption: "Mockup 3",
+                        src: DopeSouls,
+                    },
+                    {
+                        caption: "Mockup 4",
+                        src: DopeSouls,
+                    },
+                ],
             },
             {
-                title: "Print Materials",
-                text: "The print materials for Dope Souls Surf Club include posters, stickers, and apparel designs that feature the brand's logo and visual identity. The designs are eye-catching and effectively communicate the brand's fun and carefree vibe.",
-                image: DopeSouls,
+                title: "Custom Art",
+                imageDisplay: "grid",
+                beforeAfter: false,
+                packageModel: false,
+                image: [
+                    {
+                        caption: "Custom Illustration 1",
+                        src: DopeSouls,
+                    },
+                    {
+                        caption: "Custom Illustration 2",
+                        src: DopeSouls,
+                    },
+                ],
             }
         ]
     },
   },
   {
     id: 5,
-    title: "Chung-Li",
+    title: "Chung-Li The Connoisseur",
     description:
       "Chung-Li is a premier cannabis brand based in Massachusetts. Their product line includes flower, edibles, and concentrates.",
     imageUrl: ChungLi,
-    category: ["Package Design"],
+    banner: ChungLiBanner,
+    mobileBanner: ChungLi,
+    category: ["Package Design", "Custom Art"],
     slug: "chung-li",
     recent: true,
     featured: false,
@@ -152,19 +218,27 @@ const projectData = [
         section: [
             {
                 title: "Package Design",
-                text: "The package design for Chung-Li features a sleek and modern aesthetic that reflects the premium quality of their products. The use of bold typography, clean lines, and a sophisticated color palette helps to create a high-end look and feel.",
-                image: ChungLi,
+                imageDisplay: "inline-block",
+                beforeAfter: false,
+                packageModel: true,
+                image: [ChungLi],
             },
             {
-                title: "Product Labels",
-                text: "The product labels for Chung-Li are designed to be both informative and visually appealing. They include essential information such as strain type, THC/CBD content, and usage instructions, while also incorporating the brand's logo and design elements.",
-                image: ChungLi,
+                title: "Custom Art",
+                imageDisplay: "inline-block",
+                beforeAfter: false,
+                packageModel: false,
+                image: [
+                    {
+                        caption: "Custom Illustration 1",
+                        src: ChungLi,
+                    },
+                    {
+                        caption: "Custom Illustration 2",
+                        src: ChungLi,
+                    },
+                ],
             },
-            {
-                title: "Brand Consistency",
-                text: "The package design for Chung-Li maintains brand consistency across all product lines, ensuring that each item is easily recognizable as part of the Chung-Li family. This cohesive approach helps to strengthen brand identity and build customer loyalty.",
-                image: ChungLi,
-            }
         ]
     },
   },
@@ -182,19 +256,16 @@ const projectData = [
         section: [
             {
                 title: "Logo Design",
-                text: "The logo for Crooked Finger Flies features a rustic and outdoorsy design that captures the essence of fly fishing. The typography is bold and rugged, while the icon incorporates elements of fishing and nature.",
-                image: CFF,
+                imageDisplay: "inline-block",
+                beforeAfter: false,
+                packageModel: false,
+                image: [
+                    {
+                        caption: "Crooked Finger Flies Logo",
+                        src: CFF,
+                    },
+                ],
             },
-            {
-                title: "Brand Identity",
-                text: "The branding for Crooked Finger Flies includes earthy tones, natural textures, and graphic elements that reflect the adventurous and authentic spirit of fly fishing.",
-                image: CFF,
-            },
-            {
-                title: "Print Materials",
-                text: "The print materials for Crooked Finger Flies include business cards, flyers, and packaging designs that feature the brand's logo and visual identity. The designs are visually appealing and effectively communicate the brand's connection to the outdoors.",
-                image: CFF,
-            }
         ]
     }
   },
@@ -204,7 +275,7 @@ const projectData = [
     description:
       "Custom ski designs for Parlor Skis, the largest ski manufacturer on the East Coast, featuring unique graphics for a range of their clients.",
     imageUrl: Parlor,
-    category: ["Custom Art"],
+    category: ["Custom Art", "Print Design"],
     slug: "parlor",
     recent: true,
     featured: false,
@@ -212,19 +283,36 @@ const projectData = [
         section: [
             {
                 title: "Custom Ski Graphics",
-                text: "The custom ski graphics for Parlor Skis feature bold and dynamic designs that reflect the personality and style of each client. The use of vibrant colors, intricate patterns, and unique illustrations helps to create eye-catching and memorable ski designs.",
-                image: Parlor,
+                imageDisplay: "grid",
+                beforeAfter: false,
+                packageModel: false,
+                image: [
+                    {
+                        caption: "Ski Design 1",
+                        src: Parlor,
+                    },
+                    {
+                        caption: "Ski Design 2",
+                        src: Parlor,
+                    }
+                ],
             },
             {
-                title: "Client Collaboration",
-                text: "The design process for Parlor Skis involves close collaboration with clients to ensure that their vision is brought to life. This includes understanding their preferences, incorporating their ideas, and providing expert guidance on design elements.",
-                image: Parlor,
+                title: "Stio Collaboration",
+                imageDisplay: "grid",
+                beforeAfter: false,
+                packageModel: false,
+                image: [
+                    {
+                        caption: "Ski Design 3",
+                        src: Parlor,
+                    },
+                    {
+                        caption: "Ski Design 4",
+                        src: Parlor,
+                    }
+                ],
             },
-            {
-                title: "Brand Representation",
-                text: "The custom ski graphics for Parlor Skis also serve to represent the brand's identity and values. Each design is crafted to align with Parlor's commitment to quality, innovation, and the skiing lifestyle.",
-                image: Parlor,
-            }
         ]
     }
   },
@@ -236,25 +324,26 @@ const projectData = [
     imageUrl: TheHotBox,
     category: ["Logo Design"],
     slug: "the-hot-box",
-    recent: false,
+    recent: true,
     featured: true,
     content: {
         section: [
             {
                 title: "Logo Design",
-                text: "The logo for The Hot Box features a bold and modern design that captures the essence of the cannabis industry. The typography is clean and contemporary, while the icon incorporates elements of cannabis culture.",
-                image: TheHotBox,
+                imageDisplay: "inline-block",
+                beforeAfter: true,
+                packageModel: false,
+                image: [
+                    {
+                        caption: "Before",
+                        src: TheHotBox,
+                    },
+                    {
+                        caption: "After",
+                        src: Reia,
+                    },
+                ],
             },
-            {
-                title: "Brand Identity",
-                text: "The branding for The Hot Box includes a vibrant color palette, sleek patterns, and graphic elements that reflect the energetic and progressive spirit of the cannabis dispensary.",
-                image: TheHotBox,
-            },
-            {
-                title: "Print Materials",
-                text: "The print materials for The Hot Box include business cards, flyers, and signage designs that feature the brand's logo and visual identity. The designs are visually appealing and effectively communicate the brand's commitment to quality and customer service.",
-                image: TheHotBox,
-            }
         ]
     },
   },

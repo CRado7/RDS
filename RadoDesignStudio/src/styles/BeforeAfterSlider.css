@@ -1,0 +1,55 @@
+.before-after-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    user-select: none;
+  }
+  
+  /* Blur overlay sits behind slider handle but on top of images */
+  .blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 1; /* 👈 set BELOW slider handle */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* 👈 allow dragging through it */
+  }
+  
+  .before-after-container:hover .blur-overlay {
+    opacity: 0;
+  }
+  
+  /* Captions overlay */
+  .caption-overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-secondary);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    pointer-events: none; /* 👈 must stay none so slider is draggable */
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+  }
+  
+  .before-after-container:hover .caption-overlay {
+    opacity: 0;
+  }
+  
+  /* React Compare Image adjustments */
+  .react-compare-image img {
+    user-select: none;
+    pointer-events: none;
+    object-fit: cover;
+  }
+  

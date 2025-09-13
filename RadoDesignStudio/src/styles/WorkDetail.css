@@ -1,8 +1,18 @@
+.work-detail-container {
+    width: 100dvw;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    min-height: 100dvh;
+    background-color: var(--color-main, #fff);
+  }
+  
 .work-detail {
-    max-width: 1200px;
+    position: relative;
     margin: 0 auto;
     padding: 3rem 1.5rem;
-    color: var(--color-secondary, #333);
+    flex: 1;
+    color: var(--color-secondary) !important;
   }
 
   .work-detail-title {
@@ -10,19 +20,6 @@
     width: 100%;
     height: 65dvh;
     align-content: center;
-  }
-  
-  /* Back link */
-  .work-detail a.back-link {
-    display: inline-block;
-    margin: 3rem 0 0;
-    color: var(--color-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-  .work-detail a.back-link:hover {
-    color: var(--color-accent);
   }
   
   /* Title */
@@ -42,6 +39,7 @@
     margin-bottom: 2.5rem;
     justify-content: center;
   }
+
   .work-detail .categories span {
     background-color: var(--color-muted-accent, #eee);
     padding: 0.35rem 0.9rem;
@@ -54,64 +52,147 @@
   /* Hero image */
   .work-detail img.hero {
     width: 100%;
-    border-radius: 1rem;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-    margin-bottom: 2.5rem;
+    padding: 0;
+    margin: 1rem 0;
   }
   
   /* Description */
   .work-detail p.description {
     font-size: 1.15rem;
     line-height: 1.8;
-    margin: 0 auto 3rem;
+    margin: 0 0 3rem;
     color: var(--color-secondary, #444);
     max-width: 800px;
-    text-align: center;
   }
+    /* Section block */
+    .work-detail .section {
+    width: 100%;
+    }
+
+    .work-detail .section-image {
+        display: flex;
+        margin: 1.5rem auto;
+      width: clamp(80%, 600px, 90%);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+    }
   
   /* Section blocks */
-  .work-detail .sections {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    margin-bottom: 4rem;
-  }
-  .work-detail .section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
   .work-detail .section h2 {
     font-size: 1.75rem;
     font-weight: 700;
     margin: 0;
-    color: var(--color-main, #111);
+    color: var(--color-secondary, #111);
   }
+
   .work-detail .section p {
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--color-secondary, #444);
   }
-  .work-detail .section-image {
+
+  /* Work Detail Classes */
+.image-container.grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* responsive columns */
+    gap: 16px; /* space between items */
     width: 100%;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .work-detail .section-image:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   }
   
+  .image-container.grid .section-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .flex {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+  }
+  
+  .flex img {
+    flex: 1;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111111cf;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  
+  .modal-close,
+  .modal-prev,
+  .modal-next {
+    position: fixed;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1010;
+  }
+  
+  .modal-close {
+    top: 10px;
+    right: 20px;
+  }
+  
+  .modal-prev {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .modal-next {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  
   /* Responsive */
+  @media (max-width: 1024px) {
+    .work-detail-container {
+      display: inline-block;
+    }
+}
   @media (min-width: 768px) {
     .work-detail .section {
       flex-direction: row;
       align-items: center;
       gap: 2rem;
-    }
-    .work-detail .section:nth-child(even) {
-      flex-direction: row-reverse; /* alternating layout */
     }
     .work-detail .section p {
       flex: 1;
