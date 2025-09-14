@@ -157,7 +157,11 @@ function WorkDetail() {
 
             {/* Images Container */}
             {sec.image?.length > 0 && (
-                <div className={`image-container ${sec.imageDisplay}`}>
+                <div
+                className={`image-container ${
+                  Array.isArray(sec.imageDisplay) ? sec.imageDisplay.join(" ") : sec.imageDisplay
+                }`}
+              >
                     {sec.beforeAfter ? (
                     <BeforeAfterSlider
                         before={sec.image[1].src || sec.image[1]}
@@ -167,15 +171,16 @@ function WorkDetail() {
                     sec.image.map((imgObj, imgIdx) => {
                         const imgSrc = imgObj.src || imgObj;
                         return (
-                        <img
-                            key={imgIdx}
-                            src={imgSrc}
-                            alt={imgObj.caption || `${sec.title} ${imgIdx + 1}`}
-                            className="section-image"
-                            onClick={() => openModal(sec.image, imgIdx, false)}
-                        />
+                            <div key={imgIdx} className="section-image-wrapper">
+                            <img
+                                src={imgSrc}
+                                alt={imgObj.caption || `${sec.title} ${imgIdx + 1}`}
+                                className="section-image"
+                                onClick={() => openModal(sec.image, imgIdx, false)}
+                            />
+                            </div>
                         );
-                    })
+                        })
                     )}
                 </div>
                 )}

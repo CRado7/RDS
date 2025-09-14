@@ -7,14 +7,14 @@
     background-color: var(--color-main, #fff);
   }
   
-.work-detail {
+  .work-detail {
     position: relative;
     margin: 0 auto;
     padding: 3rem 1.5rem;
     flex: 1;
     color: var(--color-secondary) !important;
   }
-
+  
   .work-detail-title {
     text-align: center;
     width: 100%;
@@ -39,7 +39,7 @@
     margin-bottom: 2.5rem;
     justify-content: center;
   }
-
+  
   .work-detail .categories span {
     background-color: var(--color-muted-accent, #eee);
     padding: 0.35rem 0.9rem;
@@ -65,18 +65,26 @@
     color: var(--color-secondary, #444);
     max-width: 800px;
   }
-    /* Section block */
-    .work-detail .section {
+  
+  /* Section block */
+  .work-detail .section {
     width: 100%;
-    }
-
-    .work-detail .section-image {
-        display: flex;
-        margin: 1.5rem auto;
-      width: clamp(80%, 600px, 90%);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-        cursor: pointer;
-    }
+  }
+  
+  .work-detail .section-image-wrapper {
+    display: flex;
+    margin: 1.5rem auto;
+    width: clamp(80%, 600px, 90%);
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .work-detail .section-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
   
   /* Section blocks */
   .work-detail .section h2 {
@@ -85,18 +93,22 @@
     margin: 0;
     color: var(--color-secondary, #111);
   }
-
+  
   .work-detail .section p {
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--color-secondary, #444);
   }
-
+  
   /* Work Detail Classes */
-.image-container.grid {
+  .image-container.grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* responsive columns */
-    gap: 16px; /* space between items */
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .image-container.grid .section-image-wrapper {
     width: 100%;
   }
   
@@ -104,22 +116,102 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+  }
+  
+  /* Floating animation container (holds shadow) */
+.image-container.floating-animation {
+    overflow: visible; /* ensures shadow isn't clipped */
+  }
+  
+  /* Wrapper for image + shadow */
+  .image-container.floating-animation .section-image-wrapper {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+  }
+  
+  /* Floating image */
+  .image-container.floating-animation .section-image-wrapper .section-image {
     display: block;
-  }
-  
-  .flex {
-    display: flex;
-    gap: 1.5rem;
-    padding: 1.5rem;
     width: 100%;
-    max-width: 1200px;
-    box-sizing: border-box;
+    animation-name: float;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
   
-  .flex img {
-    flex: 1;
+  /* Shadow element (stays in place) */
+  .image-container.floating-animation .section-image-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 175px;
+    height: 14px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.35) 0%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    z-index: 0;
+    animation-name: shadow-pulse;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
-
+  
+  /* Float keyframes (only affects image) */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Shadow breathing (optional scale/opacity effect) */
+  @keyframes shadow-pulse {
+    0%, 100% {
+      transform: translateX(-50%) scale(1, 1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-50%) scale(1.2, 0.8);
+      opacity: .55;
+    }
+  }
+  
+  /* Floating durations per image (apply to image only) */
+  .image-container.floating-animation .section-image-wrapper:nth-child(1) .section-image {
+    animation-duration: 3.8s;
+  }
+  .image-container.floating-animation .section-image-wrapper:nth-child(2) .section-image {
+    animation-duration: 4s;
+  }
+  .image-container.floating-animation .section-image-wrapper:nth-child(3) .section-image {
+    animation-duration: 3.7s;
+  }
+  .image-container.floating-animation .section-image-wrapper:nth-child(4) .section-image {
+    animation-duration: 3.9s;
+  }
+  
+  /* Shadow duration (optional, keep slow subtle breathing) */
+  .image-container.floating-animation .section-image-wrapper:nth-child(1)::after {
+    animation-duration: 3.8s;
+  }
+  .image-container.floating-animation .section-image-wrapper:nth-child(2)::after {
+    animation-duration: 4s;
+  }
+  .image-container.floating-animation .section-image-wrapper:nth-child(3)::after {
+    animation-duration: 3.7s;
+  }
+  .image-container.floating-animation .section-image-wrapper:nth-child(4)::after {
+    animation-duration: 3.9s;
+  }
+  
+  
   /* Modal */
   .modal-overlay {
     position: fixed;
@@ -181,13 +273,13 @@
     transform: translateY(-50%);
   }
   
-  
   /* Responsive */
   @media (max-width: 1024px) {
     .work-detail-container {
       display: inline-block;
     }
-}
+  }
+  
   @media (min-width: 768px) {
     .work-detail .section {
       flex-direction: row;
@@ -195,6 +287,9 @@
       gap: 2rem;
     }
     .work-detail .section p {
+      flex: 1;
+    }
+    .work-detail .section-image-wrapper {
       flex: 1;
     }
     .work-detail .section-image {

@@ -10,6 +10,7 @@ import ChungLi from '../assets/chung-li/ChungLi-Thumbnail.png';
     import ChungLiBanner from '../assets/chung-li/ChungLi-Banner.svg';
 import CFF from '../assets/crooked-finger-flies/CFF-Thumbnail.png';
 import Parlor from '../assets/parlor/Parlor-Thumbnail.png';
+    import Test from '../assets/parlor/Oompa.png';
 import TheHotBox from '../assets/the-hot-box/TheHotBox-Thumbnail.png';
 
 const projectData = [
@@ -29,7 +30,7 @@ const projectData = [
         section: [
             {
                 title: "Website Overview",
-                imageDisplay: "grid",
+                imageDisplay: ["grid"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [
@@ -70,21 +71,21 @@ const projectData = [
         section: [
             {
                 title: "Branding",
-                imageDisplay: "inline-block",
+                imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [Crater],
             },
             {
                 title: "Website Design",
-                imageDisplay: "inline-block",
+                imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [Crater],
             },
             {
                 title: "Print Materials",
-                imageDisplay: "inline-block",
+                imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [Crater],
@@ -107,7 +108,7 @@ const projectData = [
     content: {
         section: [
             {
-                title: "Website Overview",
+                title: ["Website Overview"],
                 imageDisplay: "",
                 beforeAfter: false,
                 packageModel: false,
@@ -149,7 +150,7 @@ const projectData = [
         section: [
             {
                 title: "Logo Design",
-                imageDisplay: "inline-block",
+                imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [
@@ -161,7 +162,7 @@ const projectData = [
             },
             {
                 title: "Brand Consistent Mockups",
-                imageDisplay: "grid",
+                imageDisplay: ["grid"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [
@@ -185,7 +186,7 @@ const projectData = [
             },
             {
                 title: "Custom Art",
-                imageDisplay: "grid",
+                imageDisplay: ["grid"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [
@@ -218,14 +219,14 @@ const projectData = [
         section: [
             {
                 title: "Package Design",
-                imageDisplay: "inline-block",
+                imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: true,
                 image: [ChungLi],
             },
             {
                 title: "Custom Art",
-                imageDisplay: "inline-block",
+                imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [
@@ -256,7 +257,7 @@ const projectData = [
         section: [
             {
                 title: "Logo Design",
-                imageDisplay: "inline-block",
+                imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [
@@ -283,10 +284,14 @@ const projectData = [
         section: [
             {
                 title: "Custom Ski Graphics",
-                imageDisplay: "grid",
+                imageDisplay: ["grid", "floating-animation"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [
+                    {
+                        caption: "Ski Design 0",
+                        src: Test,
+                    },
                     {
                         caption: "Ski Design 1",
                         src: Parlor,
@@ -299,7 +304,7 @@ const projectData = [
             },
             {
                 title: "Stio Collaboration",
-                imageDisplay: "grid",
+                imageDisplay: ["grid"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [
@@ -330,7 +335,7 @@ const projectData = [
         section: [
             {
                 title: "Logo Design",
-                imageDisplay: "inline-block",
+                imageDisplay: ["inline-block"],
                 beforeAfter: true,
                 packageModel: false,
                 image: [
