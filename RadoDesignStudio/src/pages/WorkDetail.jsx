@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import WorkDetailNav from "../components/WorkDetailNav";
-import BeforeAfterSlider from "../components/BeforeAfterSlider"; // ✅ import reusable component
+import BeforeAfterSlider from "../components/BeforeAfterSlider";
+import LightboxInline from "../components/LightBoxInline";
 import projectData from "../data/projectData";
 import "../styles/WorkDetail.css";
 import "../styles/WorkDetailSidebar.css";
@@ -36,7 +37,7 @@ function WorkDetail() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.15 }
     );
 
     Object.values(sectionRefs.current).forEach((el) => {
@@ -158,11 +159,15 @@ function WorkDetail() {
             {/* Images Container */}
             {sec.image?.length > 0 && (
                 <div
-                className={`image-container ${
-                  Array.isArray(sec.imageDisplay) ? sec.imageDisplay.join(" ") : sec.imageDisplay
-                }`}
-              >
-                    {sec.beforeAfter ? (
+                    className={`image-container ${
+                    Array.isArray(sec.imageDisplay)
+                        ? sec.imageDisplay.join(" ")
+                        : sec.imageDisplay
+                    }`}
+                >
+                    {sec.lightBox ? (
+                    <LightboxInline images={sec.image} /> 
+                    ) : sec.beforeAfter ? (
                     <BeforeAfterSlider
                         before={sec.image[1].src || sec.image[1]}
                         after={sec.image[0].src || sec.image[0]}
@@ -170,17 +175,19 @@ function WorkDetail() {
                     ) : (
                     sec.image.map((imgObj, imgIdx) => {
                         const imgSrc = imgObj.src || imgObj;
+                        const randomFloat = (Math.random() * 0.6).toFixed(2) + "s";
                         return (
-                            <div key={imgIdx} className="section-image-wrapper">
+                        <div key={imgIdx} className="section-image-wrapper">
                             <img
-                                src={imgSrc}
-                                alt={imgObj.caption || `${sec.title} ${imgIdx + 1}`}
-                                className="section-image"
-                                onClick={() => openModal(sec.image, imgIdx, false)}
+                            src={imgSrc}
+                            alt={imgObj.caption || `${sec.title} ${imgIdx + 1}`}
+                            style={{ "--float-random": randomFloat }}
+                            className="section-image"
+                            onClick={() => openModal(sec.image, imgIdx, false)}
                             />
-                            </div>
+                        </div>
                         );
-                        })
+                    })
                     )}
                 </div>
                 )}

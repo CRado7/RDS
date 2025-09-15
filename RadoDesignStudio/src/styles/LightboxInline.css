@@ -1,0 +1,71 @@
+.lightbox-inline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .lightbox-main {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    height: 500px; /* fixed container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #111; /* optional: background for empty space */
+  }
+  
+  .lightbox-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;      /* ✅ take full container height */
+    width: 100%;
+    justify-content: center; /* centers image+caption vertically */
+  }
+  
+  .lightbox-main-image {
+    max-height: 85%; 
+    max-width: 100%;  /* ✅ image takes most of height */
+    width: auto;       /* scale proportionally */
+    object-fit: contain;
+  }
+  
+  .lightbox-caption {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #ccc;
+    text-align: center;
+    flex-shrink: 0;    /* ✅ caption never shrinks away */
+  }  
+  
+  .lightbox-thumbnails {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .lightbox-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  
+  .lightbox-thumbnail:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  
+  .lightbox-thumbnail.active {
+    outline: 2px solid var(--color-accent, #007bff);
+    outline-offset: -2px;
+    opacity: 1;
+  }
+  

@@ -6,11 +6,37 @@ import TPS from '../assets/the-print-shop/TPS-Thumbnail.png';
     import TPSBanner from '../assets/the-print-shop/TPS-Banner.svg';
 import DopeSouls from '../assets/dope-souls/DopeSouls-Thumbnail.svg';
     import DopeSoulsBanner from '../assets/dope-souls/DopeSouls-Banner.svg';
+    import WaveBreaker from '../assets/dope-souls/mockups/WaveBreaker_Mockup.jpg';
+    import StaySaltyYth from '../assets/dope-souls/mockups/StaySalty_Yth_Mockup.jpg';
+    import SignatureHoodieWomens from '../assets/dope-souls/mockups/SignatureHoodie_Womens_Mockup.jpg';
+    import SignatureHoodie from '../assets/dope-souls/mockups/SignatureHoodie_Mockup.jpg';
+    import SignatureHat from '../assets/dope-souls/mockups/SignatureHat_Mockup.jpg';
+    import SignatureYth from '../assets/dope-souls/mockups/Signature_Yth_Mockup.jpg';
+    import Signature from '../assets/dope-souls/mockups/Signature_Mockup.jpg';
+    import IconHat from '../assets/dope-souls/mockups/IconHat_Mockup.jpg';
 import ChungLi from '../assets/chung-li/ChungLi-Thumbnail.png';
     import ChungLiBanner from '../assets/chung-li/ChungLi-Banner.svg';
 import CFF from '../assets/crooked-finger-flies/CFF-Thumbnail.png';
 import Parlor from '../assets/parlor/Parlor-Thumbnail.png';
-    import Test from '../assets/parlor/Oompa.png';
+    import ParlorBanner from '../assets/parlor/Parlor-Banner.png';
+    import CherryBlossom from '../assets/parlor/skis/Cherry-Blossom.png';   
+    import FeatherFlyer from '../assets/parlor/skis/Feather-Flyer.png';
+    import FireFlowers from '../assets/parlor/skis/Fire-Flowers.png';
+    import Glory from '../assets/parlor/skis/Glory.png';
+    import GoingNowhere from '../assets/parlor/skis/Going-Nowhere.png';
+    import NeonTsunami from '../assets/parlor/skis/Neon-Tsunami.png';
+    import Newspaper from '../assets/parlor/skis/Newspaper.png';
+    import OniTraditional from '../assets/parlor/skis/Oni-Traditional.png';
+    import SpaceCowboy from '../assets/parlor/skis/Space-Cowboy.png';
+    import Supernova from '../assets/parlor/skis/Supernova.png';
+    import VisionII from '../assets/parlor/skis/Vision-II.png';
+    import WesternSkies from '../assets/parlor/skis/Western-Skies.png';
+    import MadeBackEastFlyer from '../assets/parlor/made-back-east/MadeBackEast-Flyer.png';
+    import MadeBackEastPost from '../assets/parlor/made-back-east/MadeBackEast-Post.png';
+    import MadeBackEastStory from '../assets/parlor/made-back-east/MadeBackEast-Story.png';
+    import ShopNightBanner from '../assets/parlor/shop-night/ShopNight-EmailBanner.png';
+    import ShopNightPost from '../assets/parlor/shop-night/ShopNight-Post.png';
+    import ShopNightStory from '../assets/parlor/shop-night/ShopNight-Story.png';
 import TheHotBox from '../assets/the-hot-box/TheHotBox-Thumbnail.png';
 
 const projectData = [
@@ -33,6 +59,7 @@ const projectData = [
                 imageDisplay: ["grid"],
                 beforeAfter: false,
                 packageModel: false,
+                lightBox: false,
                 image: [
                     {
                         caption: "Home Page",
@@ -74,6 +101,7 @@ const projectData = [
                 imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
+                lightBox: false,
                 image: [Crater],
             },
             {
@@ -112,6 +140,7 @@ const projectData = [
                 imageDisplay: "",
                 beforeAfter: false,
                 packageModel: false,
+                lightBox: false,
                 image: [
                     {
                         caption: "Home Page",
@@ -153,6 +182,7 @@ const projectData = [
                 imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
+                lightBox: false,
                 image: [
                     {
                         caption: "Dope Souls Logo",
@@ -165,22 +195,39 @@ const projectData = [
                 imageDisplay: ["grid"],
                 beforeAfter: false,
                 packageModel: false,
+                lightBox: false,
                 image: [
                     {
-                        caption: "Mockup 1",
-                        src: DopeSouls,
+                        caption: "Wave Breaker",
+                        src: WaveBreaker,
                     },
                     {
-                        caption: "Mockup 2",
-                        src: DopeSouls,
+                        caption: "Stay Salty Youth",
+                        src: StaySaltyYth,
                     },
                     {
-                        caption: "Mockup 3",
-                        src: DopeSouls,
+                        caption: "Signature Hoodie Womens",
+                        src: SignatureHoodieWomens,
                     },
                     {
-                        caption: "Mockup 4",
-                        src: DopeSouls,
+                        caption: "Signature Hoodie",
+                        src: SignatureHoodie,
+                    },
+                    {
+                        caption: "Signature Hat",
+                        src: SignatureHat,
+                    },
+                    {
+                        caption: "Signature Youth",
+                        src: SignatureYth,
+                    },
+                    {
+                        caption: "Signature",
+                        src: Signature,
+                    },
+                    {
+                        caption: "Icon Hat",
+                        src: IconHat,
                     },
                 ],
             },
@@ -189,6 +236,7 @@ const projectData = [
                 imageDisplay: ["grid"],
                 beforeAfter: false,
                 packageModel: false,
+                lightBox: false,
                 image: [
                     {
                         caption: "Custom Illustration 1",
@@ -222,6 +270,7 @@ const projectData = [
                 imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: true,
+                lightBox: false,
                 image: [ChungLi],
             },
             {
@@ -229,6 +278,7 @@ const projectData = [
                 imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
+                lightBox: false,
                 image: [
                     {
                         caption: "Custom Illustration 1",
@@ -260,6 +310,7 @@ const projectData = [
                 imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
+                lightBox: false,
                 image: [
                     {
                         caption: "Crooked Finger Flies Logo",
@@ -276,6 +327,8 @@ const projectData = [
     description:
       "Custom ski designs for Parlor Skis, the largest ski manufacturer on the East Coast, featuring unique graphics for a range of their clients.",
     imageUrl: Parlor,
+    banner: ParlorBanner,
+    mobileBanner: Parlor,
     category: ["Custom Art", "Print Design"],
     slug: "parlor",
     recent: true,
@@ -287,37 +340,100 @@ const projectData = [
                 imageDisplay: ["grid", "floating-animation"],
                 beforeAfter: false,
                 packageModel: false,
+                lightBox: false,
                 image: [
                     {
-                        caption: "Ski Design 0",
-                        src: Test,
+                        caption: "Cherry Blossom",
+                        src: CherryBlossom,
                     },
                     {
-                        caption: "Ski Design 1",
-                        src: Parlor,
+                        caption: "Feather Flyer",
+                        src: FeatherFlyer,
                     },
                     {
-                        caption: "Ski Design 2",
-                        src: Parlor,
-                    }
+                        caption: "Fire Flowers",
+                        src: FireFlowers,
+                    },
+                    {
+                        caption: "Glory",
+                        src: Glory,
+                    },
+                    {
+                        caption: "Going Nowhere",
+                        src: GoingNowhere,
+                    },
+                    {
+                        caption: "Neon Tsunami",
+                        src: NeonTsunami,
+                    },
+                    {
+                        caption: "Newspaper",
+                        src: Newspaper,
+                    },
+                    {
+                        caption: "Oni Traditional",
+                        src: OniTraditional,
+                    },
+                    {
+                        caption: "Space Cowboy",
+                        src: SpaceCowboy,
+                    },
+                    {
+                        caption: "Supernova",
+                        src: Supernova,
+                    },
+                    {
+                        caption: "Vision II",
+                        src: VisionII,
+                    },
+                    {
+                        caption: "Western Skies",
+                        src: WesternSkies,
+                    },
                 ],
             },
             {
-                title: "Stio Collaboration",
-                imageDisplay: ["grid"],
+                title: "Made Back East",
+                imageDisplay: [""],
                 beforeAfter: false,
                 packageModel: false,
+                lightBox: true,
                 image: [
                     {
-                        caption: "Ski Design 3",
-                        src: Parlor,
+                        caption: "Event Flyer",
+                        src: MadeBackEastFlyer,
                     },
                     {
-                        caption: "Ski Design 4",
-                        src: Parlor,
-                    }
+                        caption: "Instagram Post",
+                        src: MadeBackEastPost,
+                    },
+                    {
+                        caption: "Instagram Story",
+                        src: MadeBackEastStory,
+                    },
                 ],
             },
+            {
+                title: "Shop Night",
+                imageDisplay: [""],
+                beforeAfter: false,
+                packageModel: false,
+                lightBox: true,
+                image: [
+                    {
+                        caption: "Email Banner",
+                        src: ShopNightBanner,
+                    },
+                    {
+                        caption: "Instagram Story",
+                        src: ShopNightStory,
+                    },
+                    {
+                        caption: "Instagram Post",
+                        src: ShopNightPost,
+                    },
+                ],
+            }
         ]
     }
   },
@@ -334,10 +450,11 @@ const projectData = [
     content: {
         section: [
             {
-                title: "Logo Design",
+                title: "Logo Redesign",
                 imageDisplay: ["inline-block"],
                 beforeAfter: true,
                 packageModel: false,
+                lightBox: false,
                 image: [
                     {
                         caption: "Before",
