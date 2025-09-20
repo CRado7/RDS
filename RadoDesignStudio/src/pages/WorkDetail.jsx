@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import WorkDetailNav from "../components/WorkDetailNav";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import LightboxInline from "../components/LightBoxInline";
+import Box3D from "../components/Box3D";
 import projectData from "../data/projectData";
 import "../styles/WorkDetail.css";
 import "../styles/WorkDetailSidebar.css";
@@ -14,7 +15,8 @@ function WorkDetail() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImages, setCurrentImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isBeforeAfter, setIsBeforeAfter] = useState(false); // ✅ new
+  const [isBeforeAfter, setIsBeforeAfter] = useState(false); 
+  const [activeSides, setActiveSides] = useState({}); // <-- store sides per image
   const sectionRefs = useRef({});
 
   if (!project) {
@@ -49,11 +51,7 @@ function WorkDetail() {
 
   // Prevent background scroll when modal is open
   useEffect(() => {
-    if (modalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = modalOpen ? "hidden" : "";
   }, [modalOpen]);
 
   const openModal = (images, idx, beforeAfter = false) => {
@@ -158,81 +156,172 @@ function WorkDetail() {
 
             {/* Images Container */}
             {sec.image?.length > 0 && (
-                <div
-                    className={`image-container ${
-                    Array.isArray(sec.imageDisplay)
-                        ? sec.imageDisplay.join(" ")
-                        : sec.imageDisplay
-                    }`}
-                >
-                    {sec.lightBox ? (
-                    <LightboxInline images={sec.image} /> 
-                    ) : sec.beforeAfter ? (
-                    <BeforeAfterSlider
-                        before={sec.image[1].src || sec.image[1]}
-                        after={sec.image[0].src || sec.image[0]}
-                    />
-                    ) : (
-                    sec.image.map((imgObj, imgIdx) => {
-                        const imgSrc = imgObj.src || imgObj;
-                        const randomFloat = (Math.random() * 0.6).toFixed(2) + "s";
-                        return (
-                        <div key={imgIdx} className="section-image-wrapper">
+              <div
+                className={`image-container ${
+                  Array.isArray(sec.imageDisplay)
+                    ? sec.imageDisplay.join(" ")
+                    : sec.imageDisplay
+                }`}
+              >
+                {sec.lightBox ? (
+                  <LightboxInline images={sec.image} /> 
+                ) : sec.beforeAfter ? (
+                  <BeforeAfterSlider
+                    before={sec.image[1].src || sec.image[1]}
+                    after={sec.image[0].src || sec.image[0]}
+                  />
+                ) : sec.packageModel ? (
+                  <Box3D 
+                    image="/Template.png" 
+                    size={[1,1.64,1]} 
+                    autoRotate={false} 
+                  />
+                ) : (
+                  sec.image.map((imgObj, imgIdx) => {
+                    // If front/back image
+                    if (imgObj.frontBack) {
+                      const side = activeSides[imgIdx] || "front";
+                      const activeSrc =
+                        side === "front"
+                          ? imgObj.front || imgObj.back
+                          : imgObj.back || imgObj.front;
+
+                      return (
+                        <div key={imgIdx} className="section-image-wrapper bubble-wrapper">
+                          <div className="bubble">
                             <img
+                              src={activeSrc}
+                              alt={`${imgObj.caption} ${side}`}
+                              className="section-image"
+                              onClick={() => openModal(sec.image, imgIdx, false)}
+                            />
+                          </div>
+
+                          {/* Toggle dots */}
+                          <div className="bubble-toggle">
+                            {imgObj.front && (
+                              <button
+                                className={`toggle-btn ${side === "front" ? "active" : ""}`}
+                                onClick={() =>
+                                  setActiveSides((prev) => ({
+                                    ...prev,
+                                    [imgIdx]: "front",
+                                  }))
+                                }
+                              />
+                            )}
+                            {imgObj.back && (
+                              <button
+                                className={`toggle-btn ${side === "back" ? "active" : ""}`}
+                                onClick={() =>
+                                  setActiveSides((prev) => ({
+                                    ...prev,
+                                    [imgIdx]: "back",
+                                  }))
+                                }
+                              />
+                            )}
+                          </div>
+                        </div>
+                      );
+                    }
+
+                    // Normal single image
+                    const imgSrc = imgObj.src || imgObj;
+                    return (
+                      <div key={imgIdx} className="section-image-wrapper bubble-wrapper">
+                        <div className="bubble">
+                          <img
                             src={imgSrc}
                             alt={imgObj.caption || `${sec.title} ${imgIdx + 1}`}
-                            style={{ "--float-random": randomFloat }}
                             className="section-image"
                             onClick={() => openModal(sec.image, imgIdx, false)}
-                            />
+                          />
                         </div>
-                        );
-                    })
-                    )}
-                </div>
+                      </div>
+                    );
+                  })
                 )}
+              </div>
+            )}
           </div>
         ))}
 
         {/* Modal */}
         {modalOpen && (
-            <div className="modal-overlay" onClick={closeModal}>
-                <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="modal-close" onClick={closeModal}>
-                    ×
-                </button>
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <button className="modal-close" onClick={closeModal}>×</button>
 
-                {currentImages.length > 1 && (
-                    <button className="modal-prev" onClick={showPrev}>
-                    ‹
-                    </button>
-                )}
+              {currentImages.length > 1 && (
+                <button className="modal-prev" onClick={showPrev}>‹</button>
+              )}
 
-                <img
-                    src={
-                    currentImages[currentIndex].src || currentImages[currentIndex]
-                    }
+              <div className="modal-image-wrapper">
+                {/* If image has front/back */}
+                {currentImages[currentIndex].frontBack ? (
+                  <>
+                    <img
+                      src={
+                        activeSides[currentIndex] === "back"
+                          ? currentImages[currentIndex].back
+                          : currentImages[currentIndex].front
+                      }
+                      alt={
+                        currentImages[currentIndex].caption ||
+                        `Modal ${currentIndex + 1}`
+                      }
+                      className="modal-image"
+                    />
+
+                    {/* Bubble toggle under the image */}
+                    <div className="bubble-toggle modal-bubble-toggle">
+                      <button
+                        className={`toggle-btn ${
+                          activeSides[currentIndex] !== "back" ? "active" : ""
+                        }`}
+                        onClick={() =>
+                          setActiveSides((prev) => ({
+                            ...prev,
+                            [currentIndex]: "front",
+                          }))
+                        }
+                      />
+                      <button
+                        className={`toggle-btn ${
+                          activeSides[currentIndex] === "back" ? "active" : ""
+                        }`}
+                        onClick={() =>
+                          setActiveSides((prev) => ({
+                            ...prev,
+                            [currentIndex]: "back",
+                          }))
+                        }
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <img
+                    src={currentImages[currentIndex].src || currentImages[currentIndex]}
                     alt={
-                    currentImages[currentIndex].caption ||
-                    `Modal ${currentIndex + 1}`
+                      currentImages[currentIndex].caption ||
+                      `Modal ${currentIndex + 1}`
                     }
                     className="modal-image"
-                />
-
-                {currentImages[currentIndex].caption && (
-                    <p className="modal-caption">
-                    {currentImages[currentIndex].caption}
-                    </p>
+                  />
                 )}
+              </div>
 
-                {currentImages.length > 1 && (
-                    <button className="modal-next" onClick={showNext}>
-                    ›
-                    </button>
-                )}
-                </div>
+              {currentImages[currentIndex].caption && (
+                <p className="modal-caption">{currentImages[currentIndex].caption}</p>
+              )}
+
+              {currentImages.length > 1 && (
+                <button className="modal-next" onClick={showNext}>›</button>
+              )}
             </div>
-            )}
+          </div>
+        )}
       </div>
     </div>
   );

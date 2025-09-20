@@ -27,7 +27,7 @@ const packagesData = {
           startsAt: true,
           price: 1600,
           astrix: true,
-          footnote: 'Websites are always quoted based on scope. The above package includes 1-5 page static site design and development. E-commerce, integrations, or specialty functionality will adjust quote. All costs associated with hosting, domains, and third-party services (all recurring payments) are additional or will be at the responsibility of the site manager to pay.',
+          footnote: 'Websites are always quoted based on scope. The above package includes 1-5 page static site design and development. E-commerce, integrations, or specialty functionality will adjust quote. All costs associated with hosting, domains, and third-party services (all recurring payments) are additional.',
         }
       ]
     },
