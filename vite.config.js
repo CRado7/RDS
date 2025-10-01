@@ -1,12 +1,17 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import svgr from "vite-plugin-svgr";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
   plugins: [
     react(),
-    svgr({
-      exportAsDefault: true, // ✅ ensures default export works
-    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: "_redirects", // file in your project root
+          dest: ""           // copy to root of dist
+        }
+      ]
+    })
   ],
 });
