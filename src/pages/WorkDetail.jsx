@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import WorkDetailNav from "../components/WorkDetailNav";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
-import LightboxInline from "../components/LightBoxInline";
+import LightboxInline from "../components/LightboxInline";
 import Box3D from "../components/Box3D";
 import projectData from "../data/projectData";
 import "../styles/WorkDetail.css";
