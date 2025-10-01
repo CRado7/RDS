@@ -47,8 +47,9 @@ const PackagesPage = () => {
             ))}
           </div>
         </div>
+        <p className="footnote">Don't see a package that works for you? Thats fine! <Link to="/contact">Lets get in touch</Link> and work something out.</p>
       </section>
-      <div className="services-contact-links">
+      <div className="hot-link two-items">
             <Link to="/" className="back-link">
             ← Back to Home
             </Link>

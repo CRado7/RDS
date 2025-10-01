@@ -119,9 +119,10 @@ p {
 }
 
 .hot-link {
+  max-width: 1200px;
   display: flex;
   justify-content: flex-end;
-  margin: 2rem;
+  margin: 2rem auto;
   text-decoration: none;
   color: var(--color-secondary);
   font-weight: 600;
@@ -130,6 +131,23 @@ p {
   &:hover {
     transform: translateX(4px);
     color: var(--color-accent);
+  }
+}
+
+.hot-link.two-items {
+  justify-content: space-between;
+}
+
+.footnote {
+  color: var(--color-secondary);
+  margin: auto;
+}
+
+.footnote a {
+  color: var(--color-accent);
+
+  &:hover {
+    transform: scale(1.5);
   }
 }
 

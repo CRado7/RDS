@@ -8,6 +8,10 @@
     max-width: 1200px;
     padding: 0 1rem;
   }
+
+ .service-details-page .page-title{
+    font-size: clamp(2rem, 7dvw, 7dvw); /* example custom sizing */
+  }
   
   .service-intro {
     flex: 1 1 30%;

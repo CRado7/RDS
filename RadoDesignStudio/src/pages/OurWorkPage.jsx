@@ -17,7 +17,7 @@ const OurWork = () => {
         {/* Grid of recent project images */}
         <div className="projects-grid">
           <h1>Recent Projects</h1>
-          {recentProjects.map((project) => (
+          {allProjects.map((project) => (
             <NavLink 
               key={project.id} 
               to={`/our-work/${project.slug}`} 
@@ -29,7 +29,7 @@ const OurWork = () => {
         </div>
 
         {/* All projects displayed in creative grid */}
-        <div className="projects-text-grid">
+        {/* <div className="projects-text-grid">
           <h1>All Projects</h1>
           {allProjects.map((project) => (
             <NavLink 
@@ -40,7 +40,7 @@ const OurWork = () => {
               {project.title}
             </NavLink>
           ))}
-        </div>
+        </div> */}
 
       </section>
       <Link to="/our-services" className="hot-link">

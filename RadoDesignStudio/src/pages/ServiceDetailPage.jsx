@@ -21,8 +21,8 @@ const ServiceDetailsPage = () => {
   }
 
   return (
-    <div>
-      <ContentPageLayout title={service.title} />
+    <div className="service-details-page">
+      <ContentPageLayout title={service.title} titleClassName="service-details-title"/>
 
       <section className="service-details-container">
         <p className="service-intro">{service.intro}</p>
@@ -36,7 +36,7 @@ const ServiceDetailsPage = () => {
           ))}
         </div>
       </section>
-          <div className="services-contact-links">
+          <div className="hot-link two-items">
             <Link to="/our-services" className="back-link">
             ← Back to All Services
             </Link>

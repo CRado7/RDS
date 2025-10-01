@@ -76,12 +76,17 @@
     cursor: pointer;
     padding: 0;
   }
+
   .wd-menu-toggle span {
     display: block;
     height: 2px;
     width: 100%;
     background: var(--color-secondary);
-    transition: transform 0.3s, opacity 0.3s;
+    transition: all 0.3s, opacity 0.3s;
+  }
+
+  .wd-menu-toggle:hover span {
+    background: var(--color-accent);
   }
   
   /* Hamburger animation when open */
