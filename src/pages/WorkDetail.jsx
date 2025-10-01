@@ -178,16 +178,19 @@ function WorkDetail() {
                   />
                 ) : (
                   sec.image.map((imgObj, imgIdx) => {
+                    const randomFloat = (Math.random() * 0.6).toFixed(2) + "s"; // 0s → 0.6s
+                  
                     // If front/back image
                     if (imgObj.frontBack) {
                       const side = activeSides[imgIdx] || "front";
-                      const activeSrc =
-                        side === "front"
-                          ? imgObj.front || imgObj.back
-                          : imgObj.back || imgObj.front;
-
+                      const activeSrc = side === "front" ? imgObj.front || imgObj.back : imgObj.back || imgObj.front;
+                  
                       return (
-                        <div key={imgIdx} className="section-image-wrapper bubble-wrapper">
+                        <div
+                          key={imgIdx}
+                          className="section-image-wrapper bubble-wrapper"
+                          style={{ "--float-random": randomFloat }}
+                        >
                           <div className="bubble">
                             <img
                               src={activeSrc}
@@ -196,40 +199,34 @@ function WorkDetail() {
                               onClick={() => openModal(sec.image, imgIdx, false)}
                             />
                           </div>
-
+                  
                           {/* Toggle dots */}
                           <div className="bubble-toggle">
                             {imgObj.front && (
                               <button
                                 className={`toggle-btn ${side === "front" ? "active" : ""}`}
-                                onClick={() =>
-                                  setActiveSides((prev) => ({
-                                    ...prev,
-                                    [imgIdx]: "front",
-                                  }))
-                                }
+                                onClick={() => setActiveSides((prev) => ({ ...prev, [imgIdx]: "front" }))}
                               />
                             )}
                             {imgObj.back && (
                               <button
                                 className={`toggle-btn ${side === "back" ? "active" : ""}`}
-                                onClick={() =>
-                                  setActiveSides((prev) => ({
-                                    ...prev,
-                                    [imgIdx]: "back",
-                                  }))
-                                }
+                                onClick={() => setActiveSides((prev) => ({ ...prev, [imgIdx]: "back" }))}
                               />
                             )}
                           </div>
                         </div>
                       );
                     }
-
+                  
                     // Normal single image
                     const imgSrc = imgObj.src || imgObj;
                     return (
-                      <div key={imgIdx} className="section-image-wrapper bubble-wrapper">
+                      <div
+                        key={imgIdx}
+                        className="section-image-wrapper bubble-wrapper"
+                        style={{ "--float-random": randomFloat }}
+                      >
                         <div className="bubble">
                           <img
                             src={imgSrc}
@@ -241,6 +238,7 @@ function WorkDetail() {
                       </div>
                     );
                   })
+                  
                 )}
               </div>
             )}

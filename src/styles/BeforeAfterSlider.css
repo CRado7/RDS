@@ -27,6 +27,11 @@
     object-fit: cover;
   }
 
+  .react-compare-image__handle {
+    pointer-events: all !important;
+    z-index: 10;
+  }
+
   @media (max-width: 1200px) {
     .blur-overlay {
       display: none;
