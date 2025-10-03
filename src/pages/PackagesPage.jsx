@@ -26,6 +26,27 @@ const PackagesPage = () => {
               </div>
             ))}
           </div>
+          <p className="footnote">Don't see a <span className="underline">Brand Package</span> that works for you? Thats fine! <Link to="/contact">Lets get in touch</Link> and work something out.</p>
+        </div>
+
+        <div className="seperator-line"></div>
+
+        {/* Website Packages */}
+        <div className="package-section">
+          <h2 className="vertical-text-package">{packagesData.webPackages.heading}</h2>
+          <div className="package-list">
+            {packagesData.webPackages.packages.map((pkg, idx) => (
+              <div key={idx} className={`package-card ${pkg.astrix ? "astrix" : ""}`}>
+                <h3>{pkg.name}</h3>
+                <p className="package-content">{pkg.content}</p>
+                <p className="package-description">{pkg.description}</p>
+                {pkg.startsAt && <p className="package-price">Starting at ${pkg.price}</p>}
+                {!pkg.startsAt && <p className="package-price">${pkg.price}</p>}
+                {pkg.footnote && <p className="package-footnote">{pkg.footnote}</p>}
+              </div>
+            ))}
+          </div>
+          <p className="footnote">Don't see a <span className="underline">Web Package</span> that works for you? Thats fine! <Link to="/contact">Lets get in touch</Link> and work something out.</p>
         </div>
         
         <div className="seperator-line"></div>
@@ -46,8 +67,8 @@ const PackagesPage = () => {
               </div>
             ))}
           </div>
+             <p className="footnote">Don't see a <span className="underline">Creative Support Package</span> that works for you? Thats fine! <Link to="/contact">Lets get in touch</Link> and work something out.</p>
         </div>
-        <p className="footnote">Don't see a package that works for you? Thats fine! <Link to="/contact">Lets get in touch</Link> and work something out.</p>
       </section>
       <div className="hot-link two-items">
             <Link to="/" className="back-link">

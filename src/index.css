@@ -140,7 +140,12 @@ p {
 
 .footnote {
   color: var(--color-secondary);
-  margin: auto;
+  margin: 4rem auto 0;
+  opacity: 0.7;
+}
+
+.footnote span.underline {
+  border-bottom: 1px solid var(--color-accent);
 }
 
 .footnote a {
