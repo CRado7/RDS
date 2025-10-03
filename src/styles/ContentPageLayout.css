@@ -86,7 +86,7 @@
     opacity: 0.1;
     pointer-events: none;
     background-color: var(--color-main);
-    transition: opacity 0.1s linear;
+    transition: opacity 0.15s linear;
   }
 
   @media (max-width: 768px) {

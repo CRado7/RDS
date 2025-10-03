@@ -22,14 +22,16 @@
   
   /* React Compare Image adjustments */
   .react-compare-image img {
-    user-select: none;
-    pointer-events: none;
+    user-select: none;       /* prevent text/image selection */
+    -webkit-user-drag: none; /* prevent Safari dragging ghost image */
     object-fit: cover;
+    pointer-events: auto;    /* allow interaction */
   }
 
   .react-compare-image__handle {
     pointer-events: all !important;
     z-index: 10;
+    touch-action: pan-y pinch-zoom; /* helps Safari touch gestures */
   }
 
   @media (max-width: 1200px) {
