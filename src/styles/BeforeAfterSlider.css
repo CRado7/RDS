@@ -1,42 +1,38 @@
 .before-after-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    user-select: none;
-    margin: 2rem auto;
-  }
-  
-  /* Captions overlay */
-  .caption-overlay {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 15px;
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--color-secondary);
-    pointer-events: none; /* 👈 must stay none so slider is draggable */
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    z-index: 3;
-  }
-  
-  /* React Compare Image adjustments */
-  .react-compare-image img {
-    user-select: none;       /* prevent text/image selection */
-    -webkit-user-drag: none; /* prevent Safari dragging ghost image */
-    object-fit: cover;
-    pointer-events: auto;    /* allow interaction */
-  }
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 3rem auto;
+  overflow: hidden;
+}
 
-  .react-compare-image__handle {
-    pointer-events: all !important;
-    z-index: 10;
-    touch-action: pan-y pinch-zoom; /* helps Safari touch gestures */
-  }
+.react-compare-slider {
+  width: 100%;
+  height: auto;
+  --react-compare-slider-handle-color: var(--color-main, #fff);
+  --react-compare-slider-handle-width: 30px;
+  --react-compare-slider-handle-opacity: 1;
+  --react-compare-slider-line-color: var(--color-main, #fff);
+  --react-compare-slider-line-thickness: 2px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
 
-  @media (max-width: 1200px) {
-    .blur-overlay {
-      display: none;
-    }
-  }
+/* Captions overlay */
+.caption-overlay {
+  /* position: absolute; */
+  top: 10%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-secondary, #fff);
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+  pointer-events: none;
+  z-index: 10;
+}
   
