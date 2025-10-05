@@ -140,5 +140,20 @@
     .service-type-list {
       grid-template-columns: 1fr; /* single column on small screens */
     }
+
+    .service-type-card:hover {
+      transform: translateX(0);
+    }
+    
+    .service-type-card:hover::before {
+      width: 0%;
+    }
+  }
+
+  @media (max-width: 440px) {
+    
+ .service-details-page .page-title{
+  font-size: 1.75rem; /* example custom sizing */
+}
   }
   

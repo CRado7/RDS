@@ -91,7 +91,11 @@ import Parlor from '../assets/parlor/Parlor-Thumbnail.png';
 import TheHotBox from '../assets/the-hot-box/TheHotBox-Thumbnail.png';
     import TheHotBoxBanner from '../assets/the-hot-box/TheHotBox-Banner.png';
     import TheHotBoxBefore from '../assets/the-hot-box/TheHotBox-Before.png';
-// import InkIvory from '../assets/ink-and-ivory/InkIvory-Thumbnail.png';
+import InkIvory from '../assets/ink-and-ivory/Ink&Ivory-Thumbnail.png';
+    import InkIvoryBanner from '../assets/ink-and-ivory/Ink&Ivory-Banner.png';
+    import InkIvoryBefore from '../assets/ink-and-ivory/Ink&Ivory-Before.png';
+    import InkIvoryAfter from '../assets/ink-and-ivory/Ink&Ivory-After.png';
+    import InkIvoryCustomArt from '../assets/ink-and-ivory/Ink&Ivory-CustomArt.png';
     import InkHome from '../assets/ink-and-ivory/website/InkHome.png';
     import InkArtists from '../assets/ink-and-ivory/website/InkArtists.png';
     import InkConsult from '../assets/ink-and-ivory/website/InkConsult.png';
@@ -704,14 +708,44 @@ const projectData = [
     title: "Ink & Ivory",
     description:
       "Ink & Ivory is a tattoo studio offering custom tattoos and piercings. The shop wanted to intergtrate an admin page into their website that would allow for appointment management, staff management, and an automatic email reminder system.",
-    imageUrl: TheHotBox,
-    banner: TheHotBoxBanner,
-    category: ["Web Development"],
+    imageUrl: InkIvory,
+    banner: InkIvoryBanner,
+    category: ["Web Development", "Custom Art", "Logo Design"],
     slug: "ink-and-ivory",
     recent: false,
     featured: false,
     content: {
         section: [
+            {
+                title: "Logo Redesign",
+                imageDisplay: ["inline-block"],
+                beforeAfter: true,
+                packageModel: false,
+                lightBox: false,
+                image: [
+                    {
+                        caption: "After",
+                        src: InkIvoryAfter,
+                    },
+                    {
+                        caption: "Before",
+                        src: InkIvoryBefore,
+                    },
+                ],
+            },
+            {
+                title: "Custom Art",
+                imageDisplay: ["grid"],
+                beforeAfter: false,
+                packageModel: false,
+                lightBox: false,
+                image: [
+                    {
+                        caption: "Tattoo Elephant Logo",
+                        src: InkIvoryCustomArt,
+                    },
+                ],
+            },
             {
                 title: "Website Overview + Admin Panel",
                 imageDisplay: ["grid"],

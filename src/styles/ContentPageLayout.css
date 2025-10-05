@@ -105,6 +105,12 @@
         transform: rotate(90deg);
     }
   }
+
+  @media (max-width: 440px) {
+    .page-title {
+      font-size: 5rem;
+    }
+  }
   
   
   

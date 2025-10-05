@@ -152,5 +152,13 @@
     .package-list {
       grid-template-columns: 1fr;
     }
+
+    .package-card:hover {
+      transform: translate(0);
+    }
+
+    .package-card:hover::before {
+      width: 0%;
+    }
   }
   
