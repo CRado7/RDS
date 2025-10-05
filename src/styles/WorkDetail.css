@@ -114,7 +114,7 @@
   /* Grid layout for images */
   .image-container.grid {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 16px;
     width: 100%;
   }
