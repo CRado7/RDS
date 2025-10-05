@@ -181,6 +181,6 @@ body, html {
 
 @media (max-width: 400px) {
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
