@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import "../styles/HomePage.css";
 
 export default function HomePage() {
@@ -14,9 +15,9 @@ export default function HomePage() {
   const heroText = "RadoDesignStudio";
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  // Full background grid
-  const rows = 5; // adjust based on screen height
-  const cols = 100; // adjust based on screen width
+  // Background grid setup
+  const rows = 5;
+  const cols = 100;
   const [squares, setSquares] = useState(
     Array.from({ length: rows * cols }, (_, i) => ({
       id: i,
@@ -24,22 +25,37 @@ export default function HomePage() {
     }))
   );
 
+  // Flickering grid effect
   useEffect(() => {
     const interval = setInterval(() => {
       setSquares((prev) =>
         prev.map((sq) =>
-          Math.random() > 0.96 // ~4% chance to flip
-            ? { ...sq, active: !sq.active }
-            : sq
+          Math.random() > 0.96 ? { ...sq, active: !sq.active } : sq
         )
       );
     }, 500);
-
     return () => clearInterval(interval);
+  }, []);
+
+  // Hero text reveal on mount
+  useEffect(() => {
+    const letters = document.querySelectorAll(".hero-letter");
+    letters.forEach((letter, i) => {
+      letter.style.opacity = "0";
+      letter.style.transform = "translateY(20px)";
+      setTimeout(() => {
+        letter.style.transition = "all 0.6s ease";
+        letter.style.opacity = "1";
+        letter.style.transform = "translateY(0)";
+      }, i * 60);
+    });
   }, []);
 
   return (
     <div className="home-container">
+      {/* Optional gradient overlay */}
+      <div className="gradient-overlay"></div>
+
       {/* Background grid */}
       <div className="background-grid">
         {squares.map((sq, i) => (
@@ -50,20 +66,6 @@ export default function HomePage() {
               gridRow: Math.floor(i / cols) + 1,
               gridColumn: (i % cols) + 1,
             }}
-            onMouseEnter={() =>
-              setSquares((prev) =>
-                prev.map((p) =>
-                  p.id === sq.id ? { ...p, active: true } : p
-                )
-              )
-            }
-            onMouseLeave={() =>
-              setSquares((prev) =>
-                prev.map((p) =>
-                  p.id === sq.id ? { ...p, active: false } : p
-                )
-              )
-            }
           />
         ))}
       </div>
@@ -98,10 +100,10 @@ export default function HomePage() {
 
       {/* Navigation links */}
       <main className="links-grid">
-        {homePageLinks.map((link) => (
-          <Link to={link.url} key={link.name} className="link-card">
-            {link.name}
-          </Link>
+        {homePageLinks.map((link, i) => (
+            <Link to={link.url} className="link-card">
+              {link.name}
+            </Link>
         ))}
       </main>
     </div>

@@ -22,6 +22,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
 }
 
 .container {
@@ -88,7 +89,7 @@ a {
 a:hover {
   color: var(--color-accent);
   text-decoration: none;
-  cursor: pointer;
+  cursor: none;
 }
 
 body {
@@ -164,5 +165,26 @@ p {
 @media (max-width: 720px) {
   .background-dark {
     position: absolute;
+  }
+}
+
+@media (max-width: 480px) {
+  .hot-link {
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+  
+    &:hover {
+      transform: translateX(0);
+      color: var(--color-accent);
+    }
+
+    &:focus {
+      color: var(--color-accent);
+    }
+  }
+  
+  .hot-link.two-items {
+    justify-content: space-around;
   }
 }

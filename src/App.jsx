@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import CursorDot from "./components/CursorDot";
 import OpacityScroll from "./components/OpacityScroll";
 import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUsPage";
@@ -13,6 +14,7 @@ import Contact from "./pages/ContactPage";
 function App() {
   return (
     <Router>
+      <CursorDot />
       <ScrollToTop />
       <OpacityScroll />
       <Routes>

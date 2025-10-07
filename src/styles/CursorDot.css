@@ -1,0 +1,57 @@
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    transform: translate3d(0, 0, 0);
+    transition: background-color 0.2s ease, transform 0.15s ease;
+  }
+  
+  .cursor-dot.click-pulse::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    animation: pulse 1s ease-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+  
+  .cursor-blur {
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    mix-blend-mode: difference;
+    filter: blur(6px);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.1s ease-out;
+  }
+  
+  /* Magnetic elements */
+  .magnetic {
+    display: inline-block;
+    transition: transform 0.2s ease-out;
+  }
+  

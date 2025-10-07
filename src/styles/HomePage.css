@@ -67,12 +67,17 @@ body, html {
   line-height: 1.1;
   margin: 0;
   color: var(--color-secondary);
+  user-select: none; /* prevent text selection */
+
+  &:hover {
+    cursor: none;
+  }
 }
 
 .hero-letter {
   display: inline-block;
   transition: transform 0.5s ease;
-  cursor: default;
+  cursor: none;
 }
 
 .links-grid {
@@ -126,6 +131,45 @@ body, html {
   transform: translateX(6px);
 }
 
+/* === Enhancements === */
+
+/* Subtle gradient background overlay */
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Pulsing glow effect on active squares */
+.grid-square.active {
+  background: var(--color-accent);
+  opacity: 0.1;
+  box-shadow: 0 0 8px var(--color-accent);
+  animation: pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.5; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.1); }
+}
+
+/* Smooth hero letter animation */
+.hero-letter:hover {
+  transform: translateY(-8px) rotate(-4deg);
+}
+
+/* Slight fade in from top */
+.home-container {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 /* Desktop adjustments */
 @media (min-width: 1200px) {
   .hero h1 {
@@ -157,17 +201,55 @@ body, html {
     padding: 1.5rem 1rem;
   }
 }
-
-/* Mobile */
+/* Small mobile redesign — accent outline cards */
 @media (max-width: 600px) {
   .links-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 0 4dvw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 75%;
+    margin: 0;
+    justify-items: center;
+    padding: 0
   }
+
   .link-card {
-    font-size: 1rem;
-    padding: 1.25rem 1rem;
+    aspect-ratio: 3 / 1;
+    background: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    position: relative;
+  }
+
+  .link-card::before {
+    display: none;
+  }
+
+  .link-card:hover {
+    background: var(--color-accent);
+    color: var(--color-main);
+    transform: scale(1.02);
+  }
+
+  .hero {
+    text-align: center;
+    margin: 2rem auto 3rem;
+    width: 98vw; /* match card width visually */
+    max-width: 440px;
+    padding: 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
   }
 
   .link-card:hover {
@@ -179,8 +261,3 @@ body, html {
   }
 }
 
-@media (max-width: 400px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-}
