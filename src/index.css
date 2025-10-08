@@ -162,6 +162,12 @@ p {
   transform: translateX(4px); /* moves right */
 }
 
+@media (max-width: 768px) {
+  body {
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 720px) {
   .background-dark {
     position: absolute;
