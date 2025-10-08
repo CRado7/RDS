@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build && cp _redirects dist/_redirects",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && git subtree push --prefix dist origin deploy"
+
   },
   "dependencies": {
     "@react-spring/three": "^10.0.2",
