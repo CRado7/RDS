@@ -2,4 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/radodesi/public_html/
-    - /bin/cp -R dist/* $DEPLOYPATH
+    # Remove old files first (optional but avoids stale files)
+    - /bin/rm -rf $DEPLOYPATH/*
+    # Copy everything from dist/, including hidden files
+    - /bin/cp -R dist/. $DEPLOYPATH
