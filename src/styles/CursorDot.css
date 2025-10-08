@@ -54,4 +54,10 @@
     display: inline-block;
     transition: transform 0.2s ease-out;
   }
+
+  @media (max-width: 768px) {
+    .cursor-dot, .cursor-blur {
+      display: none;
+    }
+  }
   
