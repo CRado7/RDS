@@ -172,9 +172,16 @@ function WorkDetail() {
                   />
                 ) : sec.packageModel ? (
                   <Box3D 
-                    image="/Template.png" 
-                    size={[1,1.64,1]} 
-                    autoRotate={false} 
+                  images = {[
+                    "/Chung-Li-Package/Right.png",
+                    "/Chung-Li-Package/Left.png",
+                    "/Chung-Li-Package/Top.png",
+                    "/Chung-Li-Package/Bottom.png",
+                    "/Chung-Li-Package/Front.png",
+                    "/Chung-Li-Package/Back.png",
+                  ]}
+                    size={[1,1.64,.75]} 
+                    autoRotate={true} 
                   />
                 ) : (
                   sec.image.map((imgObj, imgIdx) => {

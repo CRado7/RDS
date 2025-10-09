@@ -1,25 +1,31 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { MeshReflectorMaterial } from "@react-three/drei";
+import React, { useState, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, useTexture } from "@react-three/drei";
 import { useSpring, a } from "@react-spring/three";
-import { sliceDieline } from "../sliceDieline";
 
-/**
- * Floating, interactive 3D box with hover, reflection, and zoom
- */
-function FloatingBox({ textures, size }) {
+function FloatingBox({ images, size, glowRef }) {
   const [hovered, setHovered] = useState(false);
   const meshRef = useRef();
+  const [right, left, top, bottom, front, back] = useTexture(images);
 
   const { scale } = useSpring({
-    scale: hovered ? 1.05 : 1,
+    scale: hovered ? 1.01 : 1,
     config: { tension: 300, friction: 10 },
   });
 
   useFrame(({ clock }) => {
+    const t = clock.getElapsedTime();
+    const y = Math.sin(t * 2) * 0.08;
+
     if (meshRef.current) {
-      const t = clock.getElapsedTime();
-      meshRef.current.position.y = Math.sin(t * 2) * 0.05;
+      meshRef.current.position.y = y;
+      meshRef.current.rotation.x = -0.05;
+      meshRef.current.rotation.z = 0;
+      meshRef.current.rotation.y += 0.001;
+    }
+
+    if (glowRef.current) {
+      glowRef.current.position.y = -size[1] / 2 - 0.15 + y * 0.9;
     }
   });
 
@@ -33,106 +39,65 @@ function FloatingBox({ textures, size }) {
       onPointerOut={() => setHovered(false)}
     >
       <boxGeometry args={size} />
-      <meshStandardMaterial attach="material-0" map={textures.right} />
-      <meshStandardMaterial attach="material-1" map={textures.left} />
-      <meshStandardMaterial attach="material-2" map={textures.top} />
-      <meshStandardMaterial attach="material-3" map={textures.bottom} />
-      <meshStandardMaterial attach="material-4" map={textures.front} />
-      <meshStandardMaterial attach="material-5" map={textures.back} />
+      <meshStandardMaterial attach="material-0" map={right} />
+      <meshStandardMaterial attach="material-1" map={left} />
+      <meshStandardMaterial attach="material-2" map={top} />
+      <meshStandardMaterial attach="material-3" map={bottom} />
+      <meshStandardMaterial attach="material-4" map={front} />
+      <meshStandardMaterial attach="material-5" map={back} />
     </a.mesh>
   );
 }
 
-function BoxModel({ image, size }) {
-  const [textures, setTextures] = useState(null);
-
-  useEffect(() => {
-    sliceDieline(image).then(setTextures);
-  }, [image]);
-
-  if (!textures) return null;
-  return <FloatingBox textures={textures} size={size} />;
-}
-
-// Custom camera zoom hook
-function ZoomController({ zoom }) {
-  const { camera } = useThree();
-  useEffect(() => {
-    camera.position.set(2, 2, zoom); // zoom in/out by moving Z
-    camera.updateProjectionMatrix();
-  }, [zoom, camera]);
-  return null;
-}
-
 export default function Box3D({
-  image = "/Template.png",
-  size = [1, 1.64, 1],
-  autoRotate = true,
+  size = [1, 1.64, 0.75],
+  images = [
+    "/chung-li-package/Right.png",
+    "/chung-li-package/Left.png",
+    "/chung-li-package/Top.png",
+    "/chung-li-package/Bottom.png",
+    "/chung-li-package/Front.png",
+    "/chung-li-package/Back.png",
+  ],
 }) {
-  const [zoom, setZoom] = useState(3); // default distance
-
-  // Grab CSS var for floor color
-  const colorMain =
-    getComputedStyle(document.documentElement).getPropertyValue(
-      "--color-main"
-    ) || "#222";
+  const glowRef = useRef();
 
   return (
-    <div style={{ width: "100%", height: "550px", position: "relative" }}>
+    <div
+      style={{
+        width: "100%",
+        height: "700px",
+        position: "relative",
+        margin: 0,
+        padding: 0,
+        overflow: "hidden",
+      }}
+    >
       <Canvas
         shadows
-        camera={{ position: [2, 2, zoom], fov: 45 }}
-        style={{ width: "100%", height: "500px" }}
-      >
-        {/* Lighting */}
-        <ambientLight intensity={0.4} />
-        <directionalLight
-          position={[3, 5, 3]}
-          intensity={1}
-          castShadow
-          shadow-mapSize-width={2048}
-          shadow-mapSize-height={2048}
-        />
-
-        {/* Reflective floor */}
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -size[1] / 2, 0]}>
-          <planeGeometry args={[10, 10]} />
-          <MeshReflectorMaterial
-            blur={[300, 100]}
-            resolution={1024}
-            mixBlur={1}
-            mixStrength={1.5}
-            depthScale={1}
-            minDepthThreshold={0.4}
-            maxDepthThreshold={1.4}
-            color={colorMain}
-            metalness={0.5}
-            roughness={1}
-          />
-        </mesh>
-
-        <BoxModel image={image} size={size} />
-        <ZoomController zoom={zoom} />
-      </Canvas>
-
-      {/* Zoom Controls */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "10px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          gap: "10px",
+        camera={{
+          position: [0.2, 0.5, 2.3],
+          fov: 65,
         }}
+        style={{ width: "100%", height: "100%", display: "block" }}
       >
-        <button onClick={() => setZoom((z) => Math.max(1.5, z - 0.5))}>
-          Zoom In
-        </button>
-        <button onClick={() => setZoom((z) => Math.min(6, z + 0.5))}>
-          Zoom Out
-        </button>
-      </div>
+        <ambientLight intensity={0.9} />
+        <directionalLight position={[3, 4, 3]} intensity={1.3} castShadow />
+        <pointLight position={[0, -1, 0]} intensity={1} color="#00ffee" />
+
+        <FloatingBox images={images} size={size} glowRef={glowRef} />
+
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          enableRotate={true}
+          enableDamping
+          dampingFactor={0.1}
+          target={[0, 0.2, 0]}
+          minPolarAngle={Math.PI / 2} // lock vertical rotation
+          maxPolarAngle={Math.PI / 2} // lock vertical rotation
+        />
+      </Canvas>
     </div>
   );
 }
