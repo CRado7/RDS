@@ -49,7 +49,6 @@ out
 .nuxt
 public
 build/
-src/
 web_modules/
 
 # -----------------------------
