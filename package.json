@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp _redirects dist/_redirects",
+    "build": "vite build && cp _redirects dist/_redirects && cp .cpanel.yml dist/.cpanel.yml",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "git checkout deploy && git merge main && npm run build && cp -R dist/. ~/public_html/ && git add . && git commit -m 'Auto deploy' && git push origin deploy && git checkout main"

@@ -11,6 +11,13 @@ import Reia from '../assets/reia/Reia-Thumbnail.png';
 import Crater from '../assets/crater/Crater-Thumbnail.png';
     import CraterBanner from '../assets/crater/Crater-Banner.png';
     import CraterLogo from '../assets/crater/Crater-Logo.png';
+    import Cover from '../assets/crater/brand-book/cover.png';
+    import WhatIs from '../assets/crater/brand-book/what-is.png';
+    import TOC from '../assets/crater/brand-book/toc.png';
+    import BrandIdentity from '../assets/crater/brand-book/brand-identity.png';
+    import brandGuidelines from '../assets/crater/brand-book/brand-guidelines.png';
+    import MoodBoard from '../assets/crater/brand-book/mood-board.png';
+    import BrandOverview from '../assets/crater/brand-book/brand-overview.png';
     import Home from '../assets/crater/website/Home.png';
     import Featured from '../assets/crater/website/Featured.png';
     import Cart from '../assets/crater/website/Cart.png';
@@ -66,6 +73,9 @@ import DopeSouls from '../assets/dope-souls/DopeSouls-Thumbnail.svg';
     import DopeSoulsLogo from '../assets/dope-souls/DopeSoulsLogo.png';
 import ChungLi from '../assets/chung-li/ChungLi-Thumbnail.png';
     import ChungLiBanner from '../assets/chung-li/ChungLi-Banner.svg';
+    import Oompa from '../assets/chung-li/Oompa.png';
+    import BagFront from '../assets/chung-li/Edibles-Package/Bag-Front.png';
+    import BagBack from '../assets/chung-li/Edibles-Package/Bag-Back.png';
 import CFF from '../assets/crooked-finger-flies/CFF-Thumbnail.png';
     import CrookedFingerFliesBanner from '../assets/crooked-finger-flies/CrookedFingerFlies-Banner.png';
 import Parlor from '../assets/parlor/Parlor-Thumbnail.png';
@@ -178,7 +188,7 @@ const projectData = [
     category: ["Web Design", "Web Development", "Logo Design", "Print Design"],
     slug: "crater",
     recent: true,
-    featured: false,
+    featured: true,
     content: {
         section: [
             {
@@ -195,7 +205,36 @@ const projectData = [
                 beforeAfter: false,
                 packageModel: false,
                 lightBox: true,
-                image: [Crater],
+                image: [
+                    {
+                        caption: "Cover",
+                        src: Cover,
+                    },
+                    {
+                        caption: "What is Crater?",
+                        src: WhatIs,
+                    },
+                    {
+                        caption: "Table of Contents",
+                        src: TOC,
+                    },
+                    {
+                        caption: "Brand Identity",
+                        src: BrandIdentity,
+                    },
+                    {
+                        caption: "Brand Guidelines",
+                        src: brandGuidelines,
+                    },
+                    {
+                        caption: "Mood Board",
+                        src: MoodBoard,
+                    },
+                    {
+                        caption: "Brand Overview",
+                        src: BrandOverview,
+                    },
+                ],
             },
             {
                 title: "Website Design",
@@ -493,16 +532,33 @@ const projectData = [
     category: ["Package Design", "Custom Art"],
     slug: "chung-li",
     recent: true,
-    featured: false,
+    featured: true,
     content: {
         section: [
             {
-                title: "Package Design",
+                title: "Package Design - Concentrates",
                 imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: true,
                 lightBox: false,
                 image: [ChungLi],
+            },
+            {
+                title: "Package Design - Edibles",
+                imageDisplay: ["inline-block"],
+                beforeAfter: false,
+                packageModel: false,
+                lightBox: true,
+                image: [
+                    {
+                        caption: "Bag Front",
+                        src: BagFront,
+                    },
+                    {
+                        caption: "Bag Back",
+                        src: BagBack,
+                    },
+                ],
             },
             {
                 title: "Custom Art",
@@ -512,12 +568,8 @@ const projectData = [
                 lightBox: false,
                 image: [
                     {
-                        caption: "Custom Illustration 1",
-                        src: ChungLi,
-                    },
-                    {
-                        caption: "Custom Illustration 2",
-                        src: ChungLi,
+                        caption: "Loopy Oompa",
+                        src: Oompa,
                     },
                 ],
             },
@@ -535,7 +587,7 @@ const projectData = [
     category: ["Logo Design"],
     slug: "crooked-finger-flies",
     recent: false,
-    featured: true,
+    featured: false,
     content: {
         section: [
             {
@@ -565,7 +617,7 @@ const projectData = [
     category: ["Custom Art", "Print Design"],
     slug: "parlor",
     recent: true,
-    featured: false,
+    featured: true,
     content: {
         section: [
             {
@@ -681,7 +733,7 @@ const projectData = [
     category: ["Logo Design"],
     slug: "the-hot-box",
     recent: true,
-    featured: true,
+    featured: false,
     content: {
         section: [
             {
