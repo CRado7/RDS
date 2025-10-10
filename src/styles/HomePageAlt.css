@@ -79,10 +79,11 @@
 
 /* === NAVBAR SLIDE-DOWN WITH SUBTLE BOUNCE === */
 .navbar-wrapper {
-    position: relative;
+    position: sticky;
+    top: 0;
     transform: translateY(-100px);
-    opacity: 0;
     animation: slideDownSoftBounce 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    z-index: 10;
   }
   
   /* Only trigger animation once visible */
@@ -153,10 +154,11 @@
   
   .intro-description {
     position: relative;
-    width: 50%;
+    width: 40%;
     height: 300px;
     font-size: 1.1rem;
     line-height: 1.6;
+    margin: auto;
   }
 
   .description-item {
@@ -204,13 +206,17 @@
     display: inline-block;
     margin-top: 1rem;
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(--color-accent);
     font-weight: 600;
     transition: opacity 0.2s ease;
   }
   
   .intro-link:hover {
     opacity: 0.8;
+  }
+
+  .mobile-description {
+    display: none;
   }
   
   /* Each scroll-trigger takes up full viewport height */
@@ -224,6 +230,68 @@
   .scroll-trigger {
     height: 100vh;
     width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-description {
+      display: block;
+    }
+
+    .intro-list ul li h2 {
+        text-align: center;
+      }
+
+    .description-item {
+      position: static;
+      height: auto;
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+      padding: 5%;
+    }
+    
+    .intro-item {
+        transition: margin 0.4s ease;
+    }
+
+    .intros-container {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 3rem 1rem;
+    }
+  
+    /* hide desktop description area */
+    .intro-description.desktop-only {
+      display: none;
+    }
+  
+    .intro-item h2 {
+      font-size: 2rem;
+    }
+  
+    .mobile-description {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  
+    .mobile-description .description-item {
+      opacity: 0;
+      max-height: 0;
+      transform: translateY(-10px);
+      overflow: hidden;
+      transition: 
+        opacity 0.4s ease,
+        max-height 0.5s ease,
+        transform 0.4s ease,
+        margin 0.3s ease;
+    }
+  
+    .intro-item.active .mobile-description .description-item {
+      opacity: 1;
+      max-height: 300px; /* enough for the text */
+      transform: translateY(0);
+      margin-bottom: 1.5rem; /* spacing between next title */
+    }
   }
 
   /* Featured Projects Section */
