@@ -47,7 +47,6 @@ dist.zip
 .next
 out
 .nuxt
-public
 build/
 web_modules/
 
