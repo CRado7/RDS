@@ -348,3 +348,18 @@
     color: var(--color-main);
   }
   
+  body.intro-playing .intro-animation {
+    z-index: 9998 !important; /* only high while animation runs */
+    pointer-events: auto;
+  }
+
+.skip-animation .intro-animation {
+    display: none !important;
+  }
+
+  .intro-animation {
+    inset: 0;
+    z-index: 0 !important;
+    pointer-events: none;
+  }
+  
