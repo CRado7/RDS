@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
+import { metaData } from "../data/metaData";
 import { NavLink, Link } from "react-router-dom";
 import WorkDetailNav from "../components/WorkDetailNav";
 import projectData from "../data/projectData";
@@ -86,16 +87,8 @@ export default function HomePageAlt() {
 
   return (
     <>
-        <Helmet>
-            <title>Rado Design Studio | Web Design, Branding & Creative Development</title>
-            <meta
-                name="description"
-                content="We help brands rise through clarity, creativity, and craftsmanship. From websites to brand identity and custom visuals—your vision, in our hands."
-            />
-            <meta name="robots" content="index, follow" />
-            <link rel="canonical" href="https://www.radodesignstudio.com/" />
-        </Helmet>
-        
+        <SEO meta={metaData.home} />
+
         {animationDone && (
         <div
             className="navbar-wrapper show"

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
+import { metaData } from "../data/metaData";
 import ContentPageLayout from "../components/ContentPageLayout";
 import projectData from "../data/projectData"; 
 import "../styles/OurWorkPage.css";
@@ -11,16 +12,8 @@ const OurWork = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Our Work | Web Design & Brand Projects | Rado Design Studio</title>
-        <meta
-          name="description"
-          content="Explore our portfolio of creative projects—custom websites, brand identities, and digital experiences crafted for clarity, performance, and impact."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.radodesignstudio.com/our-work" />
-      </Helmet>
-      
+      <SEO meta={metaData.ourWork} />
+
       <div>
         <ContentPageLayout title="Our Work" />
 

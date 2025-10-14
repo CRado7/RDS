@@ -1,7 +1,8 @@
 // src/pages/OurServicesPage.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
+import { metaData } from "../data/metaData";
 import ContentPageLayout from "../components/ContentPageLayout";
 import ourServicesData from "../data/ourServicesData";
 import "../styles/OurServicesPage.css";
@@ -9,16 +10,8 @@ import "../styles/OurServicesPage.css";
 const OurServicesPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Services | Web Design, Branding & Custom Development | Rado Design Studio</title>
-        <meta
-          name="description"
-          content="From web design and development to brand strategy and custom creative solutions—discover how Rado Design Studio transforms ideas into timeless digital experiences."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.radodesignstudio.com/our-services" />
-      </Helmet>
-      
+      <SEO meta={metaData.services} />
+
       <div>
         <ContentPageLayout title="Services" />
 

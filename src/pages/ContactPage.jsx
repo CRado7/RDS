@@ -1,21 +1,15 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
+import { metaData } from "../data/metaData";
 import ContentPageLayout from "../components/ContentPageLayout";
 import "../styles/ContactPage.css";
 
 const Contact = () => {
+  const versionQuery = `?v=${Date.now()}`;
   return (
     <>
-      <Helmet>
-        <title>Contact | Let’s Build Something Together | Rado Design Studio</title>
-        <meta
-          name="description"
-          content="Ready to start your next project? Get in touch with Rado Design Studio to discuss web design, branding, or creative development built around your goals."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.radodesignstudio.com/contact" />
-      </Helmet>
-      
+      <SEO meta={metaData.contact} />
+
       <div>
         <ContentPageLayout title="Contact" />
 

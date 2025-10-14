@@ -1,24 +1,14 @@
 import { React }  from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
+import { metaData } from "../data/metaData";
 import ContentPageLayout from "../components/ContentPageLayout";
 import "../styles/AboutUsPage.css";
 
 const AboutUs = () => {
   return (
     <>
-      <Helmet>
-        <title>About Us | Rado Design Studio</title>
-        <meta
-          name="description"
-          content="Learn more about Rado Design Studio — a creative studio specializing in web design, branding, and custom art creations."
-        />
-        <meta property="og:title" content="About Us | Rado Design Studio" />
-        <meta property="og:description" content="Creative design studio crafting impactful brands through design, development, and strategy." />
-        <meta property="og:image" content="https://radodesignstudio.com/assets/favicon.svg" />
-        <meta property="og:url" content="https://radodesignstudio.com/about-us" />
-        <meta property="og:type" content="website" />
-      </Helmet>
+      <SEO meta={metaData.aboutUs} />
 
       <main>
         <ContentPageLayout title="About Us"/>

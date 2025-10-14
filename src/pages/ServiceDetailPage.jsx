@@ -1,7 +1,8 @@
 // src/pages/ServiceDetailsPage.jsx
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
+import { metaData } from "../data/metaData";
 import ourServicesData from "../data/ourServicesData";
 import ContentPageLayout from "../components/ContentPageLayout";
 import "../styles/ServiceDetailPage.css";
@@ -26,16 +27,8 @@ const ServiceDetailsPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={`https://radodesignstudio.com/og-${service.url}.jpg`} />
-        <meta property="og:url" content={`https://radodesignstudio.com/our-services/${service.url}`} />
-        <meta property="og:type" content="website" />
-      </Helmet>
-      
+      <SEO meta={metaData.serviceDetail(service.url, service.title)} />
+
       <div className="service-details-page">
         <ContentPageLayout title={service.title} titleClassName="service-details-title"/>
 
