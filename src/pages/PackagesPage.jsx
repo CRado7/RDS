@@ -1,7 +1,8 @@
 // src/pages/PackagesPage.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
+import { metaData } from "../data/metaData";
 import ContentPageLayout from "../components/ContentPageLayout";
 import packagesData from "../data/packagesData";
 import "../styles/PackagesPage.css";
@@ -9,16 +10,8 @@ import "../styles/PackagesPage.css";
 const PackagesPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Packages | Web & Branding Plans for Every Stage | Rado Design Studio</title>
-        <meta
-          name="description"
-          content="Choose a creative package tailored to your brand’s journey—from starter sites to full-scale brand and eCommerce builds. Simple, scalable, and strategic."
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.radodesignstudio.com/packages" />
-      </Helmet>
-      
+      <SEO meta={metaData.packages} />
+
       <div>
         <ContentPageLayout title="Packages" />
 

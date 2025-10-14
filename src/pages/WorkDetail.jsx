@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
+import { metaData } from "../data/metaData";
 import WorkDetailNav from "../components/WorkDetailNav";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import LightboxInline from "../components/LightboxInline";
@@ -80,16 +81,8 @@ function WorkDetail() {
 
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={`https://radodesignstudio.com${project.banner || "/og-default.jpg"}`} />
-        <meta property="og:url" content={`https://radodesignstudio.com/our-work/${project.slug}`} />
-        <meta property="og:type" content="website" />
-      </Helmet>
-      
+      <SEO meta={metaData.workDetail(slug, project.title)} />
+
       <div className="work-detail-container">
         <WorkDetailNav />
 
