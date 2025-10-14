@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
 import CursorDot from "./components/CursorDot";
 import OpacityScroll from "./components/OpacityScroll";
@@ -14,22 +15,24 @@ import Contact from "./pages/ContactPage";
 
 function App() {
   return (
-    <Router>
-      <CursorDot />
-      <ScrollToTop />
-      <OpacityScroll />
-      <Routes>
-        {/* <Route path="/" element={<HomePage />} /> */}
-        <Route path="/" element={<HomePageAlt />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/our-work" element={<OurWork />} />
-        <Route path="/our-work/:slug" element={<WorkDetail />} />
-        <Route path="/our-services" element={<Services />} />
-        <Route path="/our-services/:serviceUrl" element={<ServiceDetailsPage />} />
-        <Route path="/packages" element={<Packages />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <CursorDot />
+        <ScrollToTop />
+        <OpacityScroll />
+        <Routes>
+          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/" element={<HomePageAlt />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/our-work" element={<OurWork />} />
+          <Route path="/our-work/:slug" element={<WorkDetail />} />
+          <Route path="/our-services" element={<Services />} />
+          <Route path="/our-services/:serviceUrl" element={<ServiceDetailsPage />} />
+          <Route path="/packages" element={<Packages />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
+    </HelmetProvider>
   );
 }
 

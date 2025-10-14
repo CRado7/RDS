@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Home -->
+  <url>
+    <loc>https://radodesignstudio.com/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://radodesignstudio.com/about-us</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Our Work -->
+  <url>
+    <loc>https://radodesignstudio.com/our-work</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Individual Work Pages (dynamic placeholder) -->
+  <url>
+    <loc>https://radodesignstudio.com/our-work/reia</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-work/crater</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+    </url>
+    
+  <url>
+    <loc>https://radodesignstudio.com/our-work/the-print-shop</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-work/dope-souls-surf-club</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-work/chung-li</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-work/crooked-finger-flies</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-work/parlor</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-work/the-hot-box</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-work/ink-and-ivory</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Services -->
+  <url>
+    <loc>https://radodesignstudio.com/our-services</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Individual Service Details (dynamic placeholder) -->
+  <url>
+    <loc>https://radodesignstudio.com/our-services/web-design-and-development</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-services/brand-development</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-services/printing-services</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-services/custom-art-creation</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://radodesignstudio.com/our-services/ongoing-services</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Packages -->
+  <url>
+    <loc>https://radodesignstudio.com/packages</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://radodesignstudio.com/contact</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+</urlset>
