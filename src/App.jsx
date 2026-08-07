@@ -1,15 +1,14 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
 import CursorDot from "./components/CursorDot";
 import OpacityScroll from "./components/OpacityScroll";
-// import HomePage from "./pages/HomePage";
 import HomePageAlt from "./pages/HomePage-Alt";
 import AboutUs from "./pages/AboutUsPage";
 import OurWork from "./pages/OurWorkPage";
-  import WorkDetail from "./pages/WorkDetail";
+import WorkDetail from "./pages/WorkDetail";
 import Services from "./pages/OurServicesPage";
-  import ServiceDetailsPage from "./pages/ServiceDetailPage";
+import ServiceDetailsPage from "./pages/ServiceDetailPage";
 import Packages from "./pages/PackagesPage";
 import Contact from "./pages/ContactPage";
 
@@ -21,7 +20,6 @@ function App() {
         <ScrollToTop />
         <OpacityScroll />
         <Routes>
-          {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/" element={<HomePageAlt />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/our-work" element={<OurWork />} />
@@ -37,4 +35,3 @@ function App() {
 }
 
 export default App;
-

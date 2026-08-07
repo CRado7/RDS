@@ -1,164 +1,192 @@
-/* src/styles/PackagesPage.css */
 .packages-container {
-    max-width: 1200px;
-    margin: 250px auto;
-    padding: 0 1rem;
+  max-width: 1100px;
+  margin: 5rem auto 4rem;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.package-section { display: flex; flex-direction: column; gap: 0; }
+
+.vertical-text-package {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--off-white-dim);
+  margin: 0 0 1.5rem;
+  writing-mode: horizontal-tb;
+  transform: none;
+}
+
+.package-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+
+.package-card {
+  background: var(--black);
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 2rem 2rem 2.5rem;
+  position: relative;
+  transition: background 0.25s ease;
+  cursor: default;
+}
+.package-card:hover { background: var(--black-mid); }
+.package-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.package-card:hover::after { transform: scaleX(1); }
+.package-card::before { display: none; }
+
+.package-card h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--off-white);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.25rem;
+  line-height: 1;
+}
+
+.package-content {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.62rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--accent) !important;
+  margin: 0 0 1.25rem !important;
+}
+
+.package-description {
+  font-size: 0.82rem !important;
+  line-height: 1.75 !important;
+  color: var(--off-white-dim) !important;
+  margin: 0 0 1.5rem !important;
+}
+
+.package-price {
+  font-family: 'Anton', sans-serif !important;
+  font-size: 2.8rem !important;
+  font-weight: 400 !important;
+  color: var(--off-white) !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  text-transform: uppercase;
+}
+
+.package-hourly {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.75rem !important;
+  font-weight: 400;
+  color: var(--off-white-dim) !important;
+  letter-spacing: 0;
+}
+
+.package-footnote {
+  font-family: 'DM Mono', monospace !important;
+  font-size: 0.7rem !important;
+  color: var(--off-white-dim) !important;
+  margin-top: 1.25rem !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid var(--rule) !important;
+  line-height: 1.7 !important;
+}
+
+.package-card.astrix::before {
+  content: '*';
+  display: block;
+  position: absolute;
+  top: 1rem; right: 1rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 1rem;
+  color: var(--rule);
+}
+
+.seperator-line { width: 100%; height: 1px; background: var(--rule); }
+/* ── Trade of Services ─────────────────────────────────────────
+   Add this to the bottom of PackagesPage.css
+   ──────────────────────────────────────────────────────────── */
+
+   .trade-section {
+    padding: 3rem 0 1rem;
+  }
+  
+  .trade-inner {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 600px;
+  }
+  
+  .trade-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: lowercase;
   }
 
-  .vertical-text-package {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: clamp(1.2rem, 1.5vw, 2rem);
-    font-weight: 600;
-    align-self: center;
+  .trade-label.big {
+    font-size: 1rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  
+  .trade-heading {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 400;
+    color: var(--off-white);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
     margin: 0;
-    padding: 0;
-  }
-
-  .package-section {
-    display: flex;
-    flex-wrap: wrap;
-    cursor: default;
-  }
-
-  .package-section h2 {
-    flex: 1 1 10%;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--color-secondary);
-    text-align: center;
   }
   
-  .package-list {
-    flex: 1 1 85%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+  .trade-body {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--off-white-dim);
+    margin: 0;
   }
   
-  .package-card {
-    background: var(--color-main);
-    border-left: 4px solid var(--color-accent);
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
+  .trade-link {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--off-white);
     text-decoration: none;
-    color: inherit;
-    transition: transform 0.3s ease;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2px;
+    margin-top: 0.5rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
   }
   
-  .package-card h3 {
-    margin-bottom: 0.5rem;
-    color: var(--color-accent);
-  }
-  
-  .package-card p {
-    margin-bottom: 0.5rem;
-    color: var(--color-secondary);
-  }
-  
-  .package-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: rgba(8, 255, 173, 0.05);
-    z-index: 0;
-    transition: width 0.4s ease;
-  }
-  
-  .package-card:hover::before {
-    width: 100%;
-  }
-  
-  .package-card * {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .package-card:hover {
-    transform: translateX(6px);
-  }
-  
-  .package-footnote {
-    font-size: 0.85rem;
-    opacity: 0.8;
-  }
-  
-  .astrix h3::after {
-    content: "*";
-    color: var(--color-accent);
-    margin-left: 0.2rem;
+  .trade-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
   }
 
-  .package-content {
-    font-weight: 800;
-  }
-
-  .package-description {
-    font-style: italic;
-  }
-
-  .package-price {
-    text-align: right;
-  }
-
-  .seperator-line {
-    width: 100%;
-    height: 5px;
-    background-color: var(--color-muted-accent);
-    margin: 2rem auto;
-  }
-  
-  /* Responsive adjustments */
-    @media (max-width: 1200px) {
-
-    .seperator-line {
-        width: 80%;
-        }
-
-    .package-section {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        cursor: default;
-    }
-    .vertical-text-package {
-        writing-mode: horizontal-tb;
-        transform: rotate(0);
-        font-size: clamp(1.2rem, 1.5vw, 2rem);
-        font-weight: 600;
-        align-self: center;
-        margin: 0;
-        padding: 0;
-        }
-
-      .package-list {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 1.5rem;
-      }
-
-      .services-contact-links {
-        padding: 0 1rem;
-      }
-    }
-
-  @media (max-width: 768px) {
-    .package-list {
-      grid-template-columns: 1fr;
-    }
-
-    .package-card:hover {
-      transform: translate(0);
-    }
-
-    .package-card:hover::before {
-      width: 0%;
-    }
-  }
-  
+@media (max-width: 768px) {
+  .packages-container { margin: 4rem auto; }
+  .package-list { grid-template-columns: 1fr; }
+}

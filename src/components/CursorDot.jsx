@@ -1,85 +1,64 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import "../styles/CursorDot.css";
 
 const CursorDot = () => {
-  const dotRef = useRef(null);
-  const animationRef = useRef(null);
+  const cursorRef = useRef(null);
+  const animRef = useRef(null);
+  const mouse = useRef({ x: -200, y: -200 });
+  const pos = useRef({ x: -200, y: -200 });
+  const [isHovering, setIsHovering] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
-  const [dotPosition, setDotPosition] = useState({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    const handleClick = () => {
-      if (dotRef.current) {
-        dotRef.current.classList.remove('click-pulse');
-        void dotRef.current.offsetWidth;
-        dotRef.current.classList.add('click-pulse');
-      }
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener('click', handleClick);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener('click', handleClick); // <-- FIXED
-      window.removeEventListener('resize', checkMobile);
-    };
+  const onMove = useCallback((e) => {
+    mouse.current = { x: e.clientX, y: e.clientY };
   }, []);
 
+  const onEnter = useCallback(() => setIsHovering(true), []);
+  const onLeave = useCallback(() => setIsHovering(false), []);
+
   useEffect(() => {
-    const animate = () => {
-      setDotPosition(prev => {
-        const dx = mousePosition.x - prev.x;
-        const dy = mousePosition.y - prev.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    window.addEventListener("mousemove", onMove);
 
-        // If we're very close, snap to position and stop animating
-        if (distance < 0.5) {
-          cancelAnimationFrame(animationRef.current);
-          return { x: mousePosition.x, y: mousePosition.y };
-        }
-
-        return {
-          x: prev.x + dx * 0.8,
-          y: prev.y + dy * 0.8,
-        };
+    // Add hover detection to all interactive elements
+    const addListeners = () => {
+      document.querySelectorAll("a, button, [data-cursor-grow]").forEach((el) => {
+        el.addEventListener("mouseenter", onEnter);
+        el.addEventListener("mouseleave", onLeave);
       });
-
-      animationRef.current = requestAnimationFrame(animate);
     };
+    addListeners();
 
-    animationRef.current = requestAnimationFrame(animate);
+    // Re-add on DOM changes
+    const observer = new MutationObserver(addListeners);
+    observer.observe(document.body, { childList: true, subtree: true });
 
-    return () => cancelAnimationFrame(animationRef.current);
-  }, [mousePosition]);
+    const animate = () => {
+      pos.current.x += (mouse.current.x - pos.current.x) * 0.12;
+      pos.current.y += (mouse.current.y - pos.current.y) * 0.12;
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate(${pos.current.x}px, ${pos.current.y}px)`;
+      }
+      animRef.current = requestAnimationFrame(animate);
+    };
+    animRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(animRef.current);
+      observer.disconnect();
+    };
+  }, [onMove, onEnter, onLeave]);
+
+  if (isMobile) return null;
 
   return (
-    <div className="cursor-dot"
-      ref={dotRef}
-      style={{
-        position: "fixed",
-        top: dotPosition.y,
-        left: dotPosition.x,
-        width: "8px",
-        height: "8px",
-        backgroundColor: "#08FFAD",
-        borderRadius: "50%",
-        pointerEvents: "none",
-        zIndex: 9999,
-        transform: "translate(-50%, -50%)",
-        mixBlendMode: "difference",
-      }}
+    <div
+      ref={cursorRef}
+      className={`cursor ${isHovering ? "cursor--grow" : ""}`}
     />
   );
 };

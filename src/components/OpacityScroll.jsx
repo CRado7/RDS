@@ -4,27 +4,26 @@ const OpacityScroll = ({ children, className }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const maxScroll = 800; // total distance for full cycle (tweak as needed)
+      const maxScroll = 800;
       const halfScroll = maxScroll / 2;
 
       let newOpacity;
 
       if (scrollY <= halfScroll) {
-        // fade in: from 0.1 → 1
         newOpacity = 0.1 + (scrollY / halfScroll) * (1 - 0.1);
       } else if (scrollY <= maxScroll) {
-        // fade out: from 1 → 0.1
-        newOpacity =
-          1 - ((scrollY - halfScroll) / halfScroll) * (1 - 0.1);
+        newOpacity = 1 - ((scrollY - halfScroll) / halfScroll) * (1 - 0.1);
       } else {
-        // past maxScroll, stay at 0.1
         newOpacity = 0.1;
       }
 
-      const title = document.querySelector(".page-title");
-      if (title) {
-        title.style.opacity = newOpacity;
-      }
+      // Target the static title OR the marquee wrap — whichever is rendered
+      const targets = document.querySelectorAll(
+        ".page-title:not(.page-title--measure), .page-title-marquee-wrap"
+      );
+      targets.forEach((el) => {
+        el.style.opacity = newOpacity;
+      });
     };
 
     window.addEventListener("scroll", handleScroll);

@@ -1,5 +1,5 @@
-import Reia from '../assets/reia/Reia-Thumbnail.png';
-    import ReiaBanner from '../assets/reia/Reia-Banner.svg';
+import ReiaBanner from '../assets/reia/Reia-Banner.svg';
+import Reia from '../assets/reia/reia-thumb.png';
     import ReiaHome from '../assets/reia/website/ReiaHome.png';
     import WhatIsAPessary from '../assets/reia/website/WhatIsAPessary.png';
     import ClinicalTrialResults from '../assets/reia/website/ClinicalTrialResults.png';
@@ -8,76 +8,43 @@ import Reia from '../assets/reia/Reia-Thumbnail.png';
     import ReiaApplicator from '../assets/reia/website/ReiaApplicator.png';
     import OurTeam from '../assets/reia/website/OurTeam.png';
     import ForClinicians from '../assets/reia/website/ForClinicians.png';
-import Crater from '../assets/crater/Crater-Thumbnail.png';
-    import CraterBanner from '../assets/crater/Crater-Banner.png';
-    import CraterLogo from '../assets/crater/Crater-Logo.png';
-    import Cover from '../assets/crater/brand-book/cover.png';
-    import WhatIs from '../assets/crater/brand-book/what-is.png';
-    import TOC from '../assets/crater/brand-book/toc.png';
-    import BrandIdentity from '../assets/crater/brand-book/brand-identity.png';
-    import brandGuidelines from '../assets/crater/brand-book/brand-guidelines.png';
-    import MoodBoard from '../assets/crater/brand-book/mood-board.png';
-    import BrandOverview from '../assets/crater/brand-book/brand-overview.png';
-    import Home from '../assets/crater/website/Home.png';
-    import Featured from '../assets/crater/website/Featured.png';
-    import Cart from '../assets/crater/website/Cart.png';
-    import Apparel from '../assets/crater/website/Apparel.png';
-    import Snowboards from '../assets/crater/website/Snowboards.png';
-    import Admin from '../assets/crater/website/Admin.png';
-    import Viewed from '../assets/crater/website/Viewed.png';
-    import Manage from '../assets/crater/website/Manage.png';
-    import AdventurerHoodie from '../assets/crater/apparel/Hoodies/Adventurer-Hoodie.png';
-    import EverestExpeditionHoodie from '../assets/crater/apparel/Hoodies/EverestExpedition-Hoodie.png';
-    import IcePeakHoodie from '../assets/crater/apparel/Hoodies/IcePeak-Hoodie.png';
-    import MountainExplorerHoodieBack from '../assets/crater/apparel/Hoodies/MountainExplorer-Hoodie-Back.png';
-    import MountainExplorerHoodieFront from '../assets/crater/apparel/Hoodies/MountainExplorer-Hoodie-Front.png';
-    import SunsetAdventureHoodieBack from '../assets/crater/apparel/Hoodies/SunsetAdventure-Hoodie-Back.png';
-    import SunsetAdventureHoodieFront from '../assets/crater/apparel/Hoodies/SunsetAdventure-Hoodie-Front.png';
-    import TrailblazerHoodie from '../assets/crater/apparel/Hoodies/Trailblazer-Hoodie.png';
-    import AlpineHikerTshirt from '../assets/crater/apparel/Tshirts/AlpineHiker-Tshirt.png';
-    import AlpineRidgeTshirtBack from '../assets/crater/apparel/Tshirts/AlpineRidge-Tshirt-Back.png';
-    import AlpineRidgeTshirtFront from '../assets/crater/apparel/Tshirts/AlpineRidge-Tshirt-Front.png';
-    import SnowboarderTshirt from '../assets/crater/apparel/Tshirts/Snowboarder-Tshirt.png';
-    import SnowfallTshirtBack from '../assets/crater/apparel/Tshirts/Snowfall-Tshirt-Back.png';
-    import SnowfallTshirtFront from '../assets/crater/apparel/Tshirts/Snowfall-Tshirt-Front.png';
-    import SummitViewTshirt from '../assets/crater/apparel/Tshirts/SummitView-Tshirt.png';
-    import WinterWindsTshirtBack from '../assets/crater/apparel/Tshirts/WinterWinds-Tshirt-Back.png';
-    import WinterWindsTshirtFront from '../assets/crater/apparel/Tshirts/WinterWinds-Tshirt-Front.png';
-    import PowderMaster from '../assets/crater/snowboards/Powder_Master.png';
-    import StealthX from '../assets/crater/snowboards/Stealth_X.png';
-    import Stormrider3000 from '../assets/crater/snowboards/Stormrider_3000.png';
-    import TheApex from '../assets/crater/snowboards/The_Apex.png';
-import TPS from '../assets/the-print-shop/TPS-Thumbnail.png';
-    import TPSBanner from '../assets/the-print-shop/TPS-Banner.svg';
-    import TPSHomePage from '../assets/the-print-shop/website/TPSHomePage.png';
-    import AboutOurServices from '../assets/the-print-shop/website/About-OurServices.png';
-    import AboutTrustedBrands from '../assets/the-print-shop/website/About-TrustedBrands.png';
-    import ArtSubmissions from '../assets/the-print-shop/website/ArtSubmissions.png';
-    import RequestQuote from '../assets/the-print-shop/website/RequestQuote.png';
-    import Contact from '../assets/the-print-shop/website/ContactPage.png';
-import DopeSouls from '../assets/dope-souls/DopeSouls-Thumbnail.svg';
-    import DopeSoulsBanner from '../assets/dope-souls/DopeSouls-Banner.svg';
-    import WaveBreaker from '../assets/dope-souls/mockups/WaveBreaker_Mockup.jpg';
-    import StaySaltyYth from '../assets/dope-souls/mockups/StaySalty_Yth_Mockup.jpg';
-    import SignatureHoodieWomens from '../assets/dope-souls/mockups/SignatureHoodie_Womens_Mockup.jpg';
-    import SignatureHoodie from '../assets/dope-souls/mockups/SignatureHoodie_Mockup.jpg';
-    import SignatureHat from '../assets/dope-souls/mockups/SignatureHat_Mockup.jpg';
-    import SignatureYth from '../assets/dope-souls/mockups/Signature_Yth_Mockup.jpg';
-    import Signature from '../assets/dope-souls/mockups/Signature_Mockup.jpg';
-    import IconHat from '../assets/dope-souls/mockups/IconHat_Mockup.jpg';
-    import GhostRider from '../assets/dope-souls/mockups/GhostRider.jpg';
-    import GhostRiderArt from '../assets/dope-souls/art/GhostRider-Art.png';
-    import WaveBreakerArt from '../assets/dope-souls/art/WaveBreaker-Art.png';
-    import ChaquitaBananaArt from '../assets/dope-souls/art/ChaquitaBanana-Art.png';
-    import DopeSoulsAlt from '../assets/dope-souls/art/DopeSouls-Alt.png';
-    import DopeSoulsLogo from '../assets/dope-souls/DopeSoulsLogo.png';
+import outpostPrimary from '../assets/offSeason/Outpost-Primary.svg';
+    import outpostBanner from '../assets/offSeason/Outpost-Banner.svg';
+    import outpostThumb from '../assets/offSeason/Outpost-Thumb.svg';
+    import outpostSecondary from '../assets/offSeason/Outpost-Secondary.svg';
+    import outpostAlt from '../assets/offSeason/Outpost-Alt.svg'
+    import outpostIcon from '../assets/offSeason/Outpost-Icon.svg'
+    import outpostSubmark from '../assets/offSeason/Outpost-Submark.svg'
+    import accSkidental from '../assets/offSeason/graphics/accSkidental_Design.svg';
+    import boardMeeting from '../assets/offSeason/graphics/boardMeeting_Design.svg';
+    import Chillin from '../assets/offSeason/graphics/Chillin_Design.svg';
+    import Duuude from '../assets/offSeason/graphics/Duuude_Design.svg';
+    import Freedom from '../assets/offSeason/graphics/Freedom_Design.svg';
+    import Glory2 from '../assets/offSeason/graphics/Glory_Design.svg';
+    import GoodDay from '../assets/offSeason/graphics/GoodDay_Design.svg';
+    import JustPassion from '../assets/offSeason/graphics/JustPassion_Design.svg';
+    import Motion from '../assets/offSeason/graphics/Motion_Design.svg';
+    import Outpost from '../assets/offSeason/graphics/Outpost_Design.svg';
+    import outpostPro from '../assets/offSeason/graphics/outpostPro_Design.svg';
+    import Paradise from '../assets/offSeason/graphics/Paradise_Design.svg';
+    import PTO from '../assets/offSeason/graphics/PTO_Design.svg';
+    import StreamLined from '../assets/offSeason/graphics/StreamLined_Design.svg';
+    import Venture from '../assets/offSeason/graphics/Venture_Design.svg';
+    import WinterSurfer from '../assets/offSeason/graphics/WinterSurfer_Design.svg';
+    import apparelPage from '../assets/offSeason/website/web-apparelPage.png';
+    import cartPage from '../assets/offSeason/website/web-cartPage.png';
+    import designPage from '../assets/offSeason/website/web-designPage.png';
+    import homePage from '../assets/offSeason/website/web-homePage.png';
+    import invoiceLookup from '../assets/offSeason/website/web-invoiceLookup.png';
+import CentralBoysLacrosse from '../assets/centralBoysLax/centralShooters.png';
+    import centralLaxBanner from '../assets/centralBoysLax/centralBoysLax-Banner.svg';
+    import CentralHoodie from '../assets/centralBoysLax/Shooter-Hoodie.png';
+    import CentralTee from '../assets/centralBoysLax/Shooter-Tee.png';
 import ChungLi from '../assets/chung-li/ChungLi-Thumbnail.png';
     import ChungLiBanner from '../assets/chung-li/ChungLi-Banner.svg';
     import Oompa from '../assets/chung-li/Oompa.png';
     import BagFront from '../assets/chung-li/Edibles-Package/Bag-Front.png';
     import BagBack from '../assets/chung-li/Edibles-Package/Bag-Back.png';
-import CFF from '../assets/crooked-finger-flies/CFF-Thumbnail.png';
-    import CrookedFingerFliesBanner from '../assets/crooked-finger-flies/CrookedFingerFlies-Banner.png';
 import Parlor from '../assets/parlor/Parlor-Thumbnail.png';
     import ParlorBanner from '../assets/parlor/Parlor-Banner.png';
     import CherryBlossom from '../assets/parlor/skis/Cherry-Blossom.png';   
@@ -92,31 +59,13 @@ import Parlor from '../assets/parlor/Parlor-Thumbnail.png';
     import Supernova from '../assets/parlor/skis/Supernova.png';
     import VisionII from '../assets/parlor/skis/Vision-II.png';
     import WesternSkies from '../assets/parlor/skis/Western-Skies.png';
-    import MadeBackEastFlyer from '../assets/parlor/made-back-east/MadeBackEast-Flyer.png';
-    import MadeBackEastPost from '../assets/parlor/made-back-east/MadeBackEast-Post.png';
-    import MadeBackEastStory from '../assets/parlor/made-back-east/MadeBackEast-Story.png';
-    import ShopNightBanner from '../assets/parlor/shop-night/ShopNight-EmailBanner.png';
-    import ShopNightPost from '../assets/parlor/shop-night/ShopNight-Post.png';
-    import ShopNightStory from '../assets/parlor/shop-night/ShopNight-Story.png';
 import TheHotBox from '../assets/the-hot-box/TheHotBox-Thumbnail.png';
     import TheHotBoxBanner from '../assets/the-hot-box/TheHotBox-Banner.png';
     import TheHotBoxBefore from '../assets/the-hot-box/TheHotBox-Before.png';
-import InkIvory from '../assets/ink-and-ivory/Ink&Ivory-Thumbnail.png';
-    import InkIvoryBanner from '../assets/ink-and-ivory/Ink&Ivory-Banner.png';
-    import InkIvoryBefore from '../assets/ink-and-ivory/Ink&Ivory-Before.png';
-    import InkIvoryAfter from '../assets/ink-and-ivory/Ink&Ivory-After.png';
-    import InkIvoryCustomArt from '../assets/ink-and-ivory/Ink&Ivory-CustomArt.png';
-    import InkHome from '../assets/ink-and-ivory/website/InkHome.png';
-    import InkArtists from '../assets/ink-and-ivory/website/InkArtists.png';
-    import InkConsult from '../assets/ink-and-ivory/website/InkConsult.png';
-    import InkGallery from '../assets/ink-and-ivory/website/InkGallery.png';
-    import InkGalleryModal from '../assets/ink-and-ivory/website/InkGalleryModal.png';
-    import InkContact from '../assets/ink-and-ivory/website/InkContact.png';
-    import InkGalleryUpload from '../assets/ink-and-ivory/website/InkGalleryUpload.png';
-    import InkMonthViewCalendar from '../assets/ink-and-ivory/website/InkMonthViewCalendar.png';
-    import InkWeekViewCalendar from '../assets/ink-and-ivory/website/InkWeekViewCalendar.png';
-    import InkDayViewCalendar from '../assets/ink-and-ivory/website/InkDayViewCalendar.png';
-    import InkAppointmentDetails from '../assets/ink-and-ivory/website/InkAppointmentDetails.png';
+import RiflesBanner from '../assets/rifles/rifles-banner.svg';
+    import RiflesThumb from '../assets/rifles/rifles-thumbnail.svg';
+    import RiflesHomeNew from '../assets/rifles/RiflesHome-New.png';
+    import RiflesHomeOld from '../assets/rifles/RiflesHome-Old.png';
 
 const projectData = [
   {
@@ -135,7 +84,7 @@ const projectData = [
         section: [
             {
                 title: "Website Overview",
-                imageDisplay: ["grid"],
+                imageDisplay: ["browser"],
                 beforeAfter: false,
                 packageModel: false,
                 lightBox: false,
@@ -179,350 +128,265 @@ const projectData = [
   },
   {
     id: 2,
-    title: "Crater",
+    title: "The Off-Season Outpost",
     description:
-      "Crater is built for backcountry boarders and skiers—a brand that celebrates the outdoor lifestyle and the people who live it.",
-    imageUrl: Crater,
-    banner: CraterBanner,
-    mobileBanner: Crater,
+      "The Off-Season Outpost is a lifestyle apparel brand focused on celebrating the people who don't have an off-season.",
+    imageUrl: outpostThumb,
+    banner: outpostBanner, //make banner
+    mobileBanner: outpostThumb,
     category: ["Web Design", "Web Development", "Logo Design", "Print Design"],
-    slug: "crater",
+    slug: "off-season-outpost",
     recent: true,
     featured: true,
     content: {
         section: [
             {
-                title: "Logo Design",
-                imageDisplay: ["inline-block"],
+                title: "Logo System",
+                imageDisplay: ["logo-showcase"],
                 beforeAfter: false,
                 packageModel: false,
                 lightBox: false,
-                image: [CraterLogo],
-            },
-            {
-                title: "Brand Guidelines",
-                imageDisplay: ["inline-block"],
-                beforeAfter: false,
-                packageModel: false,
-                lightBox: true,
                 image: [
                     {
-                        caption: "Cover",
-                        src: Cover,
+                        caption: "Primary Logo",
+                        src: outpostPrimary,
                     },
                     {
-                        caption: "What is Crater?",
-                        src: WhatIs,
+                        caption: "Secondary Logo",
+                        src: outpostSecondary,
                     },
                     {
-                        caption: "Table of Contents",
-                        src: TOC,
+                        caption: "Alternate Logo",
+                        src: outpostAlt,
                     },
                     {
-                        caption: "Brand Identity",
-                        src: BrandIdentity,
+                        caption: "Icon Logo",
+                        src: outpostIcon,
                     },
                     {
-                        caption: "Brand Guidelines",
-                        src: brandGuidelines,
+                        caption: "Submark Logo",
+                        src: outpostSubmark,
+                    },
+                ],
+            },
+            {
+                title: "Brand Colors",
+                imageDisplay: ["brand-colors"],
+                beforeAfter: false,
+                packageModel: false,
+                lightBox: false,
+                image: [],
+                colors: [
+                    { name: "PNW Green", hex: "#1b2e28" },
+                    { name: "Siesta Sunrise Orange", hex: "#c97330" },
+                    { name: "Cape Cod Fog Grey", hex: "#d4cbbc" },
+                ],
+            },
+            {
+                title: "Typography",
+                imageDisplay: ["type-display"],
+                beforeAfter: false,
+                packageModel: false,
+                lightBox: false,
+                image: [],
+                fonts: [
+                    {
+                        name: "Archivo Black",
+                        googleFont: "Archivo+Black",
+                        role: "Display / Headings",
+                        weights: ["400"],
                     },
                     {
-                        caption: "Mood Board",
-                        src: MoodBoard,
-                    },
-                    {
-                        caption: "Brand Overview",
-                        src: BrandOverview,
+                        name: "DM Mono",
+                        googleFont: "DM+Mono:ital,wght@0,300;0,400;0,500;1,400",
+                        role: "Body / UI",
+                        weights: ["300", "400", "500"],
                     },
                 ],
             },
             {
                 title: "Website Design",
-                imageDisplay: ["grid"],
+                imageDisplay: ["browser"],
                 beforeAfter: false,
                 packageModel: false,
                 image: [
                     {
                         caption: "Home Page",
-                        src: Home,
+                        src: homePage,
                     },
                     {
-                        caption: "Featured Products",
-                        src: Featured,
-                    },
-                    {
-                        caption: "Cart Page",
-                        src: Cart,
+                        caption: "Design Page",
+                        src: designPage,
                     },
                     {
                         caption: "Apparel Page",
-                        src: Apparel,
+                        src: apparelPage,
                     },
                     {
-                        caption: "Snowboards Page",
-                        src: Snowboards,
+                        caption: "Cart Page",
+                        src: cartPage,
                     },
                     {
-                        caption: "Admin Orders Page",
-                        src: Admin,
-                    },
-                    {
-                        caption: "Recently Viewed Page",
-                        src: Viewed,
-                    },
-                    {
-                        caption: "Manage Products Page",
-                        src: Manage,
+                        caption: "Invoice Lookup Page",
+                        src: invoiceLookup,
                     },
                 ],
             },
             {
                 title: "Apparel Designs",
-                imageDisplay: ["grid", "floating-animation"],
+                imageDisplay: ["grid"],
                 beforeAfter: false,
                 packageModel: false,
                 lightBox: false,
+                whiteBg: true,
                 image: [
                     {
-                    caption: "Adventurer",
-                    src: AdventurerHoodie,
+                        caption: "AccSkidental",
+                        src: accSkidental,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Everest Expedition",
-                    src: EverestExpeditionHoodie,
+                        caption: "Board Meeting",
+                        src: boardMeeting,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Ice Peak",
-                    src: IcePeakHoodie,
+                        caption: "Chillin'",
+                        src: Chillin,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Mountain Explorer",
-                    front: MountainExplorerHoodieFront,
-                    back: MountainExplorerHoodieBack,
-                    frontBack: true
+                        caption: "Duuude",
+                        src: Duuude,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Sunset Adventure",
-                    front: SunsetAdventureHoodieFront,
-                    back: SunsetAdventureHoodieBack,
-                    frontBack: true
+                        caption: "Freedom",
+                        src: Freedom,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Trailblazer",
-                    src: TrailblazerHoodie,
+                        caption: "Glory",
+                        src: Glory2,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Alpine Hiker",
-                    src: AlpineHikerTshirt,
+                        caption: "Good Day",
+                        src: GoodDay,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Alpine Ridge",
-                    front: AlpineRidgeTshirtFront,
-                    back: AlpineRidgeTshirtBack,
-                    frontBack: true
+                        caption: "Just Passion",
+                        src: JustPassion,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Snowboarder",
-                    src: SnowboarderTshirt,
+                        caption: "Motion",
+                        src: Motion,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Snowfall",
-                    front: SnowfallTshirtFront,
-                    back: SnowfallTshirtBack,
-                    frontBack: true
+                        caption: "Outpost",
+                        src: Outpost,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Summit View",
-                    src: SummitViewTshirt,
+                        caption: "Outpost Pro",
+                        src: outpostPro,
+                        whiteBg: true,
                     },
                     {
-                    caption: "Winter Winds",
-                    front: WinterWindsTshirtFront,
-                    back: WinterWindsTshirtBack,
-                    frontBack: true
+                        caption: "Paradise",
+                        src: Paradise,
+                        whiteBg: true,
+                    },
+                    {
+                        caption: "PTO",
+                        src: PTO,
+                        whiteBg: true,
+                    },
+                    {
+                        caption: "Stream Lined",
+                        src: StreamLined,
+                        whiteBg: true,
+                    },
+                    {
+                        caption: "Venture",
+                        src: Venture,
+                        whiteBg: true,
+                    },
+                    {
+                        caption: "Wind Surfer",
+                        src: WinterSurfer,
+                        whiteBg: true,
                     },
                 ],
                 },     
-            {
-                title: "Snowboard Designs",
-                imageDisplay: ["grid", "floating-animation"],
-                beforeAfter: false,
-                packageModel: false,
-                lightBox: false,
-                image: [
-                    {
-                        caption: "Powder Master",
-                        src: PowderMaster,
-                    },
-                    {
-                        caption: "Stealth X",
-                        src: StealthX,
-                    },
-                    {
-                        caption: "Stormrider 3000",
-                        src: Stormrider3000,
-                    },
-                    {
-                        caption: "The Apex",
-                        src: TheApex,
-                    },
-                ],
-            },
         ]
     },
   },
   {
     id: 3,
-    title: "The Print Shop",
+    title: "Central High School Boys Lacrosse",
     description:
-      "The Print Shop is a family-owned and operated screen printing and embroidery business located in Wilbraham, MA.",
-    imageUrl: TPS,
-    banner: [TPSBanner],
-    mobileBanner: TPS,
-    category: ["Web Design", "Web Development"],
-    slug: "the-print-shop",
+      "Warm-up shirts for the Central High School Boys Lacrosse team in Springfield, MA. The team wanted a design was modern and different from the rest of the school's athletic apparel, while still incorporating the school's colors and mascot.",
+    imageUrl: CentralBoysLacrosse,
+    banner: centralLaxBanner, 
+    mobileBanner: CentralBoysLacrosse,
+    category: ["Print Design", "Custom Art"],
+    slug: "central-high-lacrosse",
     recent: true,
     featured: false,
     content: {
         section: [
             {
-                title: ["Website Overview"],
-                imageDisplay: ["grid"],
-                beforeAfter: false,
-                packageModel: false,
-                lightBox: false,
-                image: [
-                    {
-                        caption: "Home Page",
-                        src: TPSHomePage,
-                    },
-                    {
-                        caption: "About Our Services",
-                        src: AboutOurServices,
-                    },
-                    {
-                        caption: "About Trusted Brands",
-                        src: AboutTrustedBrands,
-                    },
-                    {
-                        caption: "Art Submissions",
-                        src: ArtSubmissions,
-                    },
-                    {
-                        caption: "Request a Quote",
-                        src: RequestQuote,
-                    },
-                    {
-                        caption: "Contact Page",
-                        src: Contact,
-                    },
-                ],
-            },
-        ],
-    },
-  },
-  {
-    id: 4,
-    title: "Dope Souls Surf Club",
-    description:
-      "Dope Souls is a lifestyle brand built around good vibes, surfing, and the ocean.",
-    imageUrl: DopeSouls,
-    banner: DopeSoulsBanner,
-    mobileBanner: DopeSouls,
-    category: ["Branding", "Logo Design", "Print Design", "Custom Art"],
-    slug: "dope-souls-surf-club",
-    recent: true,
-    featured: false,
-    content: {
-        section: [
-            {
-                title: "Logo",
+                title: "Digital Design",
                 imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
                 lightBox: false,
                 image: [
                     {
-                        caption: "Dope Souls Logo",
-                        src: DopeSoulsLogo,
+                        caption: "Digial Design",
+                        src: CentralBoysLacrosse,
                     },
                 ],
             },
             {
-                title: "Brand Consistent Mockups",
+                title: "Brand Colors",
+                imageDisplay: ["brand-colors"],
+                beforeAfter: false,
+                packageModel: false,
+                lightBox: false,
+                image: [],
+                colors: [
+                    { name: "Vegas Gold", hex: "#cab671" },
+                    { name: "Central White", hex: "#FFFFFF" },
+                    { name: "PMS 425 C", hex: "#54585A" },
+                ],
+            },
+            {
+                title: "Mockups",
                 imageDisplay: ["grid"],
                 beforeAfter: false,
                 packageModel: false,
                 lightBox: false,
                 image: [
                     {
-                        caption: "Wave Breaker",
-                        src: WaveBreaker,
+                        caption: "Shooter Shirt Mockup",
+                        src: CentralTee,
                     },
                     {
-                        caption: "Stay Salty Youth",
-                        src: StaySaltyYth,
-                    },
-                    {
-                        caption: "Signature Hoodie Womens",
-                        src: SignatureHoodieWomens,
-                    },
-                    {
-                        caption: "Signature Hoodie",
-                        src: SignatureHoodie,
-                    },
-                    {
-                        caption: "Signature Hat",
-                        src: SignatureHat,
-                    },
-                    {
-                        caption: "Signature Youth",
-                        src: SignatureYth,
-                    },
-                    {
-                        caption: "Signature",
-                        src: Signature,
-                    },
-                    {
-                        caption: "Icon Hat",
-                        src: IconHat,
-                    },
-                    {
-                        caption: "Ghost Rider",
-                        src: GhostRider,
+                        caption: "Hoodie Mockup",
+                        src: CentralHoodie,
                     },
                 ],
             },
-            {
-                title: "Custom Art",
-                imageDisplay: ["grid"],
-                beforeAfter: false,
-                packageModel: false,
-                lightBox: false,
-                image: [
-                    {
-                        caption: "Ghost Rider Art",
-                        src: GhostRiderArt,
-                    },
-                    {
-                        caption: "Wave Breaker Art",
-                        src: WaveBreakerArt,
-                    },
-                    {
-                        caption: "Chaquita Banana Art",
-                        src: ChaquitaBananaArt,
-                    },
-                    {
-                        caption: "Dope Souls Alternate Logo",
-                        src: DopeSoulsAlt,
-                    },
-                ],
-            }
         ]
     },
   },
   {
-    id: 5,
+    id: 4,
     title: "Chung-Li The Connoisseur",
     description:
       "Chung-Li is a premier cannabis brand based in Massachusetts. Their product line includes flower, edibles, and concentrates.",
@@ -548,7 +412,7 @@ const projectData = [
                 imageDisplay: ["inline-block"],
                 beforeAfter: false,
                 packageModel: false,
-                lightBox: true,
+                lightBox: false,
                 image: [
                     {
                         caption: "Bag Front",
@@ -577,37 +441,7 @@ const projectData = [
     },
   },
   {
-    id: 6,
-    title: "Crooked Finger Flies",
-    description:
-      "Based in Seattle, WA, Crooked Finger Flies is a fly fishing company specializing in hand-tied flies.",
-    imageUrl: CFF,
-    banner: CrookedFingerFliesBanner,
-    mobileBanner: CFF,
-    category: ["Logo Design"],
-    slug: "crooked-finger-flies",
-    recent: false,
-    featured: false,
-    content: {
-        section: [
-            {
-                title: "Logo Design",
-                imageDisplay: ["inline-block"],
-                beforeAfter: false,
-                packageModel: false,
-                lightBox: false,
-                image: [
-                    {
-                        caption: "Crooked Finger Flies Logo",
-                        src: CFF,
-                    },
-                ],
-            },
-        ]
-    }
-  },
-  {
-    id: 7,
+    id: 5,
     title: "Parlor",
     description:
       "Custom ski designs for Parlor Skis, the largest ski manufacturer on the East Coast, featuring unique graphics for a range of their clients.",
@@ -677,53 +511,11 @@ const projectData = [
                     },
                 ],
             },
-            {
-                title: "Made Back East",
-                imageDisplay: [""],
-                beforeAfter: false,
-                packageModel: false,
-                lightBox: true,
-                image: [
-                    {
-                        caption: "Event Flyer",
-                        src: MadeBackEastFlyer,
-                    },
-                    {
-                        caption: "Instagram Post",
-                        src: MadeBackEastPost,
-                    },
-                    {
-                        caption: "Instagram Story",
-                        src: MadeBackEastStory,
-                    },
-                ],
-            },
-            {
-                title: "Shop Night",
-                imageDisplay: [""],
-                beforeAfter: false,
-                packageModel: false,
-                lightBox: true,
-                image: [
-                    {
-                        caption: "Email Banner",
-                        src: ShopNightBanner,
-                    },
-                    {
-                        caption: "Instagram Story",
-                        src: ShopNightStory,
-                    },
-                    {
-                        caption: "Instagram Post",
-                        src: ShopNightPost,
-                    },
-                ],
-            }
         ]
     }
   },
   {
-    id: 8,
+    id: 6,
     title: "The Hot Box",
     description:
       "The Hot Box is a cannabis dispensary based in Attleboro, MA, offering a wide variety of products including flower, edibles, and concentrates.",
@@ -757,21 +549,21 @@ const projectData = [
     },
   },
   {
-    id: 9,
-    title: "Ink & Ivory",
+    id: 7,
+    title: "Springfield Rifles Rugby Club",
     description:
-      "Ink & Ivory is a tattoo studio offering custom tattoos and piercings. The shop wanted to intergtrate an admin page into their website that would allow for appointment management, staff management, and an automatic email reminder system.",
-    imageUrl: InkIvory,
-    banner: InkIvoryBanner,
-    mobileBanner: InkIvory,
-    category: ["Web Development", "Custom Art", "Logo Design"],
-    slug: "ink-and-ivory",
+      "The Springfield Rifles Rugby Club is a rugby team based in Springfield, MA. They wanted an updated website that was modern and polished. Their only desire was to internally manage content such as game schedules, social events, and rosters.",
+    imageUrl: RiflesThumb,
+    banner: RiflesBanner,
+    mobileBanner: RiflesThumb,
+    category: ["Web Design", "Web Development"],
+    slug: "springfield-rifles-rugby-club",
     recent: false,
     featured: false,
     content: {
         section: [
             {
-                title: "Logo Redesign",
+                title: "Website Redesign - Homepage Preview",
                 imageDisplay: ["inline-block"],
                 beforeAfter: true,
                 packageModel: false,
@@ -779,80 +571,53 @@ const projectData = [
                 image: [
                     {
                         caption: "After",
-                        src: InkIvoryAfter,
+                        src: RiflesHomeNew,
                     },
                     {
                         caption: "Before",
-                        src: InkIvoryBefore,
+                        src: RiflesHomeOld,
                     },
                 ],
             },
+            // {
+            //     title: "Website Overview",
+            //     imageDisplay: ["browser"],
+            //     beforeAfter: false,
+            //     packageModel: false,
+            //     lightBox: false,
+            //     image: [
+            //         {
+            //             caption: "Home Page",
+            //             src: "https://via.placeholder.com/300x200.png?text=Springfield+Rifles+Rugby+Club+Website+Home",
+            //         },
+            //         {
+            //             caption: "Schedule Page",
+            //             src: "https://via.placeholder.com/300x200.png?text=Springfield+Rifles+Rugby+Club+Website+Schedule",
+            //         },
+            //         {
+            //             caption: "Roster Page",
+            //             src: "https://via.placeholder.com/300x200.png?text=Springfield+Rifles+Rugby+Club+Website+Roster",
+            //         },
+            //         {
+            //             caption: "Events Page",
+            //             src: "https://via.placeholder.com/300x200.png?text=Springfield+Rifles+Rugby+Club+Website+Events",
+            //         },
+            //     ],
+            // },
             {
-                title: "Custom Art",
-                imageDisplay: ["grid"],
+                title: "Team Colors",
+                imageDisplay: ["brand-colors"],
                 beforeAfter: false,
                 packageModel: false,
                 lightBox: false,
-                image: [
-                    {
-                        caption: "Tattoo Elephant Logo",
-                        src: InkIvoryCustomArt,
-                    },
+                image: [],
+                colors: [
+                    { name: "Rifles Green", hex: "#2a7a3e" },
+                    { name: "Rifles Gold", hex: "#c9a84c" },
+                    { name: "White", hex: "#ffffff" },
+                    { name: "Black", hex: "#000000" },
                 ],
-            },
-            {
-                title: "Website Overview + Admin Panel",
-                imageDisplay: ["grid"],
-                beforeAfter: false,
-                packageModel: false,
-                lightBox: false,
-                image: [
-                    {
-                        caption: "Home Page",
-                        src: InkHome,
-                    },
-                    {
-                        caption: "Artists Page",
-                        src: InkArtists,
-                    },
-                    {
-                        caption: "Consultation Page",
-                        src: InkConsult,
-                    },
-                    {
-                        caption: "Gallery Page",
-                        src: InkGallery,
-                    },
-                    {
-                        caption: "Gallery Modal View",
-                        src: InkGalleryModal,
-                    },
-                    {
-                        caption: "Contact Page",
-                        src: InkContact,
-                    },
-                    {
-                        caption: "Gallery Upload Page",
-                        src: InkGalleryUpload,
-                    },
-                    {
-                        caption: "Month View Calendar",
-                        src: InkMonthViewCalendar,
-                    },
-                    {
-                        caption: "Week View Calendar",
-                        src: InkWeekViewCalendar,
-                    },
-                    {
-                        caption: "Day View Calendar",
-                        src: InkDayViewCalendar,
-                    },
-                    {
-                        caption: "Appointment Details",
-                        src: InkAppointmentDetails,
-                    },
-                ],
-            },
+            }
         ],
     },
   }
