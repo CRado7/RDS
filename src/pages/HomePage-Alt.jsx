@@ -6,210 +6,212 @@ import WorkDetailNav from "../components/WorkDetailNav";
 import projectData from "../data/projectData";
 import "../styles/HomePageAlt.css";
 
+import RadoLavaLamp from "../components/RadoLavaLamp";
+
+/* ─────────────────────────────────────────────
+   Main page
+───────────────────────────────────────────── */
 export default function HomePageAlt() {
-    const pageIntros = [
-        { 
-          name: "about", 
-          description: "Rado Design Studio is where creative precision meets bold strategy. We craft brand identities that don’t just look good — they command attention and leave a lasting mark.", 
-          link: "/about-us" 
-        },
-        { 
-          name: "our work", 
-          description: "From breweries to tattoo studios and lifestyle disruptors, we partner with brands that dare to be different. Each project is built with intent, edge, and a touch of rebellion.", 
-          link: "/our-work" 
-        },
-        { 
-          name: "services", 
-          description: "We design, develop, and refine every touchpoint of your brand — from digital presence to visual identity. The result: sleek, powerful work that cuts through the noise.", 
-          link: "/our-services" 
-        },
-        { 
-          name: "packages", 
-          description: "No templates. No shortcuts. Our packages are built to fit your brand’s ambitions — scalable, intentional, and crafted for impact.", 
-          link: "/packages" 
-        },
-        { 
-          name: "contact", 
-          description: "Ready to make waves? Reach out and let’s build something that turns heads, challenges the norm, and moves your brand forward.", 
-          link: "/contact" 
-        },
-      ];
-      
+  const mousePos = useRef({ x: -9999, y: -9999 });
+
+  const pageIntros = [
+    {
+      index: "01",
+      name: "About",
+      description:
+        "I'm Christopher — been making things since before it was a job. Screen printing going on a decade, digital art even longer. This studio exists because small businesses deserve good design without a big agency price tag.",
+      link: "/about-us",
+    },
+    {
+      index: "02",
+      name: "Work",
+      description:
+        "Surf brands, breweries, tattoo shops, ski companies, medical startups, print shops. Every project is different. Every one gets the same attention.",
+      link: "/our-work",
+    },
+    {
+      index: "03",
+      name: "Services",
+      description:
+        "Web design, branding, screen printing, custom art, ongoing support. I keep it under one roof so nothing falls through the cracks.",
+      link: "/our-services",
+    },
+    {
+      index: "04",
+      name: "Packages",
+      description:
+        "Real pricing for real businesses. Whether you need a logo or a full brand + website launch, there's a starting point that won't make you wince.",
+      link: "/packages",
+    },
+    {
+      index: "05",
+      name: "Contact",
+      description:
+        "No forms, no pitch decks. Just a conversation about what you're building and whether I'm the right person to help.",
+      link: "/contact",
+    },
+  ];
+
   const [activeIndex, setActiveIndex] = useState(0);
   const introRefs = useRef([]);
-  const [animationPlayedRecently, setAnimationPlayedRecently] = useState(false);
-  const [animationDone, setAnimationDone] = useState(false);
 
-  // --- Intersection observer for scroll highlights ---
+  // Global mouse tracking for warp effect
   useEffect(() => {
-    const observerOptions = { root: null, threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const index = Number(entry.target.dataset.index);
-        if (entry.isIntersecting) setActiveIndex(index);
-      });
-    }, observerOptions);
+    const onMove = (e) => {
+      mousePos.current = { x: e.clientX, y: e.clientY };
+    };
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
 
+  // Scroll observer for intro section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting)
+            setActiveIndex(Number(entry.target.dataset.index));
+        });
+      },
+      { root: null, threshold: 0.5 }
+    );
     introRefs.current.forEach((ref) => ref && observer.observe(ref));
     return () => observer.disconnect();
   }, []);
 
-  // --- Animation logic (play only once every 4 hours) ---
-  useEffect(() => {
-    const lastPlayed = localStorage.getItem("radoIntroPlayedTime");
-    const now = Date.now();
-    const FOUR_HOURS = 4 * 60 * 60 * 1000;
-
-    if (lastPlayed && now - Number(lastPlayed) < FOUR_HOURS) {
-      // animation recently played
-      setAnimationPlayedRecently(true);
-      setAnimationDone(true);
-      document.body.style.overflow = "auto";
-      document.body.classList.remove("intro-playing");
-    } else {
-      // play the animation
-      document.body.style.overflow = "hidden";
-      document.body.classList.add("intro-playing");
-
-      const timer = setTimeout(() => {
-        setAnimationDone(true);
-        document.body.style.overflow = "auto";
-        document.body.classList.remove("intro-playing");
-        localStorage.setItem("radoIntroPlayedTime", Date.now().toString());
-      }, 4000);
-
-      return () => {
-        clearTimeout(timer);
-        document.body.classList.remove("intro-playing");
-      };
-    }
-  }, []);
+  const featuredProjects = projectData.filter((p) => p.featured);
 
   return (
     <>
-        <SEO meta={metaData.home} />
+      <SEO meta={metaData.home} />
+      <WorkDetailNav />
 
-        {animationDone && (
-        <div
-            className="navbar-wrapper show"
-            style={{ transitionDelay: animationPlayedRecently ? "0s" : "0.4s" }}
-        >
-            <WorkDetailNav />
-        </div>
-        )}
+      {/* ════════════════════════════════
+          HERO — Full viewport RADO warp
+      ════════════════════════════════ */}
+      <section className="hero-rado">
 
-      {/* Always show hero — skip animation if seen recently */}
-      <section
-        className={`intro-animation ${
-          animationPlayedRecently ? "skip-animation" : ""
-        }`}
-      >
-        <div className="square-wrapper">
-          <div className="split-line top"></div>
-          <div className="split-line bottom"></div>
-          <div className="square">
-            <h1>
-              Rado
-              <br />
-              Design
-              <br />
-              Studio
-            </h1>
+        {/* The giant RADO — Vector Bulge Glass */}
+        <div className="hero-word-wrap">
+          <RadoLavaLamp />
+          <div className="hero-studio-tag">
+            <span className="hero-studio-text">
+              <span>D</span>
+              <span>e</span>
+              <span>s</span>
+              <span>i</span>
+              <span>g</span>
+              <span>n</span>
+              <span> </span>
+              <span>S</span>
+              <span>t</span>
+              <span>u</span>
+              <span>d</span>
+              <span>i</span>
+              <span>o</span>
+            </span>
           </div>
+        </div>
+
+
+        {/* Bottom row */}
+        <div className="hero-rule-bottom">
+          <span className="hero-tagline">Design · Print · Web · Art</span>
+          <Link to="/our-work" className="hero-cta-link">See the work ↗</Link>
         </div>
       </section>
 
-      {/* Main content */}
+      {/* ════════════════════════════════
+          SCROLL INTRO — numbered list
+      ════════════════════════════════ */}
       <section className="intros">
-      <div className="intros-container">
-        <div className="intro-list">
-            <ul>
-                {pageIntros.map((page, index) => (
-                <li
-                    key={index}
-                    className={`intro-item ${activeIndex === index ? "active" : ""}`}
-                    onClick={() => setActiveIndex(index)}
-                >
-                    <h2>{page.name}</h2>
+        <div className="intros-sticky">
+          <div className="intros-left">
+            {pageIntros.map((page, i) => (
+              <div
+                key={i}
+                className={`intro-row ${activeIndex === i ? "active" : ""}`}
+                onClick={() => setActiveIndex(i)}
+              >
+                <span className="intro-num">{page.index}</span>
+                <h2 className="intro-title">{page.name}</h2>
+                <div className="intro-mobile-desc">
+                  <p>{page.description}</p>
+                  <NavLink to={page.link} className="intro-link">Explore →</NavLink>
+                </div>
+              </div>
+            ))}
+          </div>
 
-                    {/* Mobile description (shows only under active item) */}
-                    <div className="mobile-description">
-                    {activeIndex === index && (
-                        <div className="description-item active">
-                        <p>{page.description}</p>
-                        <NavLink to={page.link} className="intro-link">
-                            Learn More
-                        </NavLink>
-                        </div>
-                    )}
-                    </div>
-                </li>
-                ))}
-            </ul>
+          <div className="intros-right desktop-only">
+            {pageIntros.map((page, i) => (
+              <div
+                key={i}
+                className={`intro-desc ${activeIndex === i ? "active" : "inactive"}`}
+              >
+                <p>{page.description}</p>
+                <NavLink to={page.link} className="intro-link">Explore →</NavLink>
+              </div>
+            ))}
+          </div>
         </div>
-
-        {/* Desktop description area */}
-        <div className="intro-description desktop-only">
-        {pageIntros.map((page, index) => (
-            <div
-            key={index}
-            className={`description-item ${
-                activeIndex === index ? "active" : "inactive"
-            }`}
-            >
-            <p>{page.description}</p>
-            <NavLink to={page.link} className="intro-link">
-                Learn More
-            </NavLink>
-            </div>
-        ))}
-        </div>
-    </div>
 
         <div className="scroll-sections">
-          {pageIntros.map((_, index) => (
+          {pageIntros.map((_, i) => (
             <div
-              key={index}
+              key={i}
               className="scroll-trigger"
-              ref={(el) => (introRefs.current[index] = el)}
-              data-index={index}
-            ></div>
+              ref={(el) => (introRefs.current[i] = el)}
+              data-index={i}
+            />
           ))}
         </div>
       </section>
 
-      <section className="featured-projects">
-        <h2>Featured Projects</h2>
-        <div className="projects-grid home">
-          {projectData
-            .filter((project) => project.featured)
-            .map((project) => (
-              <NavLink
-                key={project.id}
-                to={`/our-work/${project.slug}`}
-                className="project-item"
-              >
-                <img src={project.imageUrl} alt={project.title} />
-              </NavLink>
-            ))}
+      {/* ════════════════════════════════
+          FEATURED WORK
+      ════════════════════════════════ */}
+      <section className="home-work">
+        <div className="home-work-header">
+          <span className="section-label">Featured Work</span>
+          <Link to="/our-work" className="home-work-all">All projects →</Link>
         </div>
-        <div className="hot-link wide">
-          <Link to="/our-work" className="contact-link">
-            See It All →
-          </Link>
+        <div className="home-work-grid">
+          {featuredProjects.map((project, i) => (
+            <NavLink
+              key={project.id}
+              to={`/our-work/${project.slug}`}
+              className={`home-work-item item-${i}`}
+              data-cursor-grow
+            >
+              <div className="home-work-img">
+                <img src={project.imageUrl} alt={project.title} />
+              </div>
+              <div className="home-work-meta">
+                <span className="home-work-title">{project.title}</span>
+                <span className="home-work-cats">
+                  {project.category.slice(0, 2).join(" / ")}
+                </span>
+              </div>
+            </NavLink>
+          ))}
         </div>
       </section>
 
-      <section className="collaboration">
-        <div className="collab-text">
-          <h2>Got a wild idea?</h2>
-          <p>
-            Let’s smash it together. Tattoos, brews, lifestyle chaos—if it’s bold,
-            we’re in. No pitches, no BS—just making cool stuff and getting it seen.
+      {/* ════════════════════════════════
+          CTA
+      ════════════════════════════════ */}
+      <section className="home-cta-block">
+        <div className="home-cta-inner">
+          <p className="home-cta-sub">// ready when you are</p>
+          <h2 className="home-cta-headline">Got a wild idea?</h2>
+          <p className="home-cta-body">
+            Doesn't have to be fully formed. I like working through the
+            messy stuff. Reach out and let's figure out if we're a good fit.
           </p>
-          <a href="/contact" className="collab-button">
-            Collab With Us
-          </a>
+          <Link to="/contact" className="home-cta-btn" data-cursor-grow>
+            Get in touch
+          </Link>
         </div>
       </section>
     </>

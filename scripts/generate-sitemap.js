@@ -2,7 +2,7 @@ import { writeFileSync } from "fs";
 import { SitemapStream, streamToPromise } from "sitemap";
 
 import ourServicesData from "../src/data/ourServicesData.js";
-import projectData from "../src/data/projectData.js";
+import projectData from "../src/data/projectRoutes.js";
 
 const BASE_URL = "https://radodesignstudio.com";
 
