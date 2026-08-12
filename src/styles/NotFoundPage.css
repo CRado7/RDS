@@ -1,0 +1,234 @@
+/* ================================================================
+   404 — Not Found Page
+   Glitch effect: chromatic aberration on the "404" text using
+   ::before / ::after pseudo-elements with clip-path flicker.
+   ================================================================ */
+
+   .nf-page {
+    min-height: 100dvh;
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 7rem 5% 5rem;
+    box-sizing: border-box;
+  }
+  
+  /* ── Hero block ── */
+  .nf-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  
+  /* ── Glitch container ── */
+  .nf-glitch-wrap {
+    position: relative;
+    line-height: 1;
+    user-select: none;
+  }
+  
+  /* The actual 404 number */
+  .nf-number {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(7rem, 28vw, 22rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Chromatic aberration layers */
+  .nf-number::before,
+  .nf-number::after {
+    content: '404';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Anton', sans-serif;
+    font-size: inherit;
+    font-weight: 400;
+    letter-spacing: inherit;
+  }
+  
+  /* Lime layer */
+  .nf-number::before {
+    color: var(--accent);           /* #E8FF3A */
+    z-index: 2;
+    animation: glitch-lime 3s steps(1) infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    opacity: 0;
+  }
+  
+  /* Off-white layer */
+  .nf-number::after {
+    color: #C9C4BC;
+    z-index: 3;
+    animation: glitch-grey 3s steps(1) infinite;
+    clip-path: polygon(0 55%, 100% 55%, 100% 80%, 0 80%);
+    opacity: 0;
+  }
+  
+  /* ── Extra glitch burst (JS-triggered) ── */
+  .nf-extra-glitch .nf-number::before,
+  .nf-extra-glitch .nf-number::after {
+    animation-duration: 0.15s;
+    opacity: 1;
+  }
+  
+  /* ── Glitch keyframes ── */
+  @keyframes glitch-lime {
+    0%   { opacity: 0; transform: translate(0); }
+  
+    /* First burst ~0.8s in */
+    27%  { opacity: 0; }
+    28%  { opacity: 1; transform: translate(-4px, 2px);
+            clip-path: polygon(0 20%, 100% 20%, 100% 38%, 0 38%); }
+    30%  { transform: translate(4px, -2px);
+            clip-path: polygon(0 10%, 100% 10%, 100% 28%, 0 28%); }
+    32%  { opacity: 0; transform: translate(0); }
+  
+    /* Second burst ~1.7s in */
+    57%  { opacity: 0; }
+    58%  { opacity: 1; transform: translate(5px, 1px);
+            clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); }
+    60%  { transform: translate(-3px, -1px);
+            clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%); }
+    62%  { opacity: 0; transform: translate(0); }
+  
+    100% { opacity: 0; transform: translate(0); }
+  }
+  
+  @keyframes glitch-grey {
+    0%   { opacity: 0; transform: translate(0); }
+  
+    /* Offset from lime so they fire slightly apart */
+    29%  { opacity: 0; }
+    30%  { opacity: 1; transform: translate(3px, -3px);
+            clip-path: polygon(0 55%, 100% 55%, 100% 78%, 0 78%); }
+    32%  { transform: translate(-4px, 2px);
+            clip-path: polygon(0 70%, 100% 70%, 100% 90%, 0 90%); }
+    34%  { opacity: 0; transform: translate(0); }
+  
+    59%  { opacity: 0; }
+    60%  { opacity: 1; transform: translate(-6px, 2px);
+            clip-path: polygon(0 40%, 100% 40%, 100% 58%, 0 58%); }
+    62%  { transform: translate(2px, -3px);
+            clip-path: polygon(0 80%, 100% 80%, 100% 95%, 0 95%); }
+    64%  { opacity: 0; transform: translate(0); }
+  
+    100% { opacity: 0; transform: translate(0); }
+  }
+  
+  /* ── Copy ── */
+  .nf-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .nf-headline {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--off-white);
+    margin: 0;
+    line-height: 1;
+  }
+  
+  .nf-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(0.78rem, 1.4vw, 0.95rem);
+    line-height: 1.75;
+    color: var(--off-white-dim);
+    margin: 0;
+  }
+  
+  /* ── Nav ── */
+  .nf-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  
+  .nf-nav-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: lowercase;
+    color: var(--accent);
+  }
+  
+  .nf-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+  
+  .nf-nav-list li {
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  .nf-nav-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--off-white-dim);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+  
+  .nf-nav-link:hover {
+    color: var(--black);
+    background: var(--accent);
+  }
+  
+  .nf-nav-arrow {
+    color: var(--rule);
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+  
+  .nf-nav-link:hover .nf-nav-arrow {
+    color: var(--black);
+    transform: translateX(3px);
+  }
+  
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .nf-number::before,
+    .nf-number::after { animation: none; opacity: 0; }
+  }
+  
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    .nf-page { gap: 3rem; padding: 6rem 5% 4rem; }
+    .nf-nav-list { flex-direction: column; border-left: none; border-top: none; width: 100%; }
+    .nf-nav-list li { border-left: 1px solid var(--rule); border-top: 1px solid var(--rule); }
+    .nf-nav-link { padding: 0.9rem 1.25rem; justify-content: space-between; }
+  }

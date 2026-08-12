@@ -11,6 +11,7 @@ import Services from "./pages/OurServicesPage";
 import ServiceDetailsPage from "./pages/ServiceDetailPage";
 import Packages from "./pages/PackagesPage";
 import Contact from "./pages/ContactPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/our-services/:serviceUrl" element={<ServiceDetailsPage />} />
           <Route path="/packages" element={<Packages />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </HelmetProvider>
