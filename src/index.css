@@ -132,6 +132,7 @@ span.bold { font-weight: 500; }
 .hero { top: 0; left: 0; }
 .footer { bottom: 0; left: 0; }
 
+@media (max-width: 1366px) { p { font-size: 1rem !important; } }
 @media (max-width: 768px) { body { cursor: pointer; } }
 @media (max-width: 480px) {
   .hot-link { justify-content: center; }

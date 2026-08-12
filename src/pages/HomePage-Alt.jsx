@@ -8,6 +8,7 @@ import "../styles/HomePageAlt.css";
 
 import RadoLavaLamp from "../components/RadoLavaLamp";
 
+
 /* ─────────────────────────────────────────────
    Main page
 ───────────────────────────────────────────── */

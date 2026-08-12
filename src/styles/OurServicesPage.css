@@ -73,7 +73,7 @@
 }
 .service-card:hover .service-link { opacity: 1; border-color: var(--accent); color: var(--accent); }
 
-@media (max-width: 1200px) {
+@media (max-width: 1366px) {
   .service-card { grid-template-columns: 1fr; gap: 1rem; }
   .service-card p { opacity: 1; transform: translateY(0); }
   .service-link { opacity: 1; display: inline-block; margin-top: 0.5rem; border-color: var(--rule); }
