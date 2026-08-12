@@ -127,7 +127,14 @@
   .page-title-marquee-track { animation: none; }
 }
 
+@media (max-width: 1366px) {
+  .nav-links a {
+    font-size: .9rem;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-links { gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
+  .nav-links a { font-size: .62rem ;}
   .page-title { opacity: 0.06; }
 }
