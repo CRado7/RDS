@@ -79,6 +79,16 @@
 }
 
 @media (max-width: 600px) {
-  .bc-wrap { grid-template-columns: 1fr 1fr; }
+  /* .bc-wrap { grid-template-columns: 1fr 1fr; } */
+  .bc-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .bc-card {
+    width: 100%;
+  }
   .bc-swatch { height: 120px; }
+  .bc-value-row {
+    flex-direction: column;
+  }
 }

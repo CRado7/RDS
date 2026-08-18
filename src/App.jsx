@@ -12,6 +12,7 @@ import ServiceDetailsPage from "./pages/ServiceDetailPage";
 import Packages from "./pages/PackagesPage";
 import Contact from "./pages/ContactPage";
 import NotFoundPage from "./pages/NotFoundPage";
+// import PageTransition from "./components/PageTransition";
 
 function App() {
   return (
@@ -20,17 +21,17 @@ function App() {
         <CursorDot />
         <ScrollToTop />
         <OpacityScroll />
-        <Routes>
-          <Route path="/" element={<HomePageAlt />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/our-work" element={<OurWork />} />
-          <Route path="/our-work/:slug" element={<WorkDetail />} />
-          <Route path="/our-services" element={<Services />} />
-          <Route path="/our-services/:serviceUrl" element={<ServiceDetailsPage />} />
-          <Route path="/packages" element={<Packages />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<HomePageAlt />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/our-work" element={<OurWork />} />
+            <Route path="/our-work/:slug" element={<WorkDetail />} />
+            <Route path="/our-services" element={<Services />} />
+            <Route path="/our-services/:serviceUrl" element={<ServiceDetailsPage />} />
+            <Route path="/packages" element={<Packages />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
       </Router>
     </HelmetProvider>
   );

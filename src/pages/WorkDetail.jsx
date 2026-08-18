@@ -23,6 +23,9 @@ function WorkDetail() {
   const [currentImages, setCurrentImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeSides, setActiveSides] = useState({});
+  const currentIdx  = projectData.findIndex((p) => p.slug === slug);
+  const prevProject = projectData[(currentIdx - 1 + projectData.length) % projectData.length];
+  const nextProject = projectData[(currentIdx + 1) % projectData.length];
 
   // Track whether the SECTION that opened the modal has whiteBg
   // so the modal overlay can match
@@ -275,6 +278,28 @@ function WorkDetail() {
               </div>
             </div>
           )}
+
+          <div className="project-loop-nav">
+            <Link
+              to={`/our-work/${prevProject.slug}`}
+              className="project-loop-btn project-loop-btn--prev"
+            >
+              <span className="project-loop-direction">← Prev</span>
+              <span className="project-loop-title">{prevProject.title}</span>
+            </Link>
+
+            <Link to="/our-work" className="project-loop-all">
+              All Work
+            </Link>
+
+            <Link
+              to={`/our-work/${nextProject.slug}`}
+              className="project-loop-btn project-loop-btn--next"
+            >
+              <span className="project-loop-direction">Next →</span>
+              <span className="project-loop-title">{nextProject.title}</span>
+            </Link>
+          </div>
         </div>
       </div>
     </>

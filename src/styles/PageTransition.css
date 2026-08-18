@@ -1,0 +1,36 @@
+/* ================================================================
+   Page Transition — lime blade wipe
+   Sweeps in from the left, pulls away to the right.
+   z-index sits below the cursor (99999) but above everything else.
+   ================================================================ */
+
+   .pt-blade {
+    position: fixed;
+    inset: 0;
+    background: var(--accent); /* #E8FF3A */
+    z-index: 99997;
+    pointer-events: none;
+    will-change: transform;
+  }
+  
+  .pt-blade--in {
+    animation: pt-wipe-in 0.26s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  }
+  
+  .pt-blade--out {
+    animation: pt-wipe-out 0.26s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  }
+  
+  @keyframes pt-wipe-in {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0%);    }
+  }
+  
+  @keyframes pt-wipe-out {
+    from { transform: translateX(0%);    }
+    to   { transform: translateX(100%);  }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .pt-blade { display: none; }
+  }
