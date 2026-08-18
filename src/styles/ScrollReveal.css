@@ -1,0 +1,85 @@
+/* ================================================================
+   ScrollReveal — scroll-triggered entrance animations
+   All transitions use compositor-only properties (transform, opacity,
+   clip-path) so they never trigger layout or paint.
+   ================================================================ */
+
+/* Shared base */
+.sr {
+    will-change: transform, opacity, clip-path;
+  }
+  
+  /* ── Up: translate + fade (body text, cards, general content) ── */
+  .sr--up {
+    opacity: 0;
+    transform: translateY(36px);
+    transition:
+      opacity   0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--sr-delay, 0ms),
+      transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--sr-delay, 0ms);
+  }
+  .sr--up.sr-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* ── Blade: clip-path wipe from bottom (headings, section labels) ──
+     The most editorial of the types — content appears to slide out
+     from behind an invisible horizontal mask. */
+  .sr--blade {
+    clip-path: inset(0 0 100% 0);
+    transition:
+      clip-path 0.7s cubic-bezier(0.76, 0, 0.24, 1) var(--sr-delay, 0ms);
+  }
+  .sr--blade.sr-revealed {
+    clip-path: inset(0 0 0% 0);
+  }
+  
+  /* ── Fade: pure opacity (subtle elements, background details) ── */
+  .sr--fade {
+    opacity: 0;
+    transition:
+      opacity 0.8s ease var(--sr-delay, 0ms);
+  }
+  .sr--fade.sr-revealed {
+    opacity: 1;
+  }
+  
+  /* ── Left: slide in from left (left-side content in split layouts) ── */
+  .sr--left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition:
+      opacity   0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--sr-delay, 0ms),
+      transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--sr-delay, 0ms);
+  }
+  .sr--left.sr-revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* ── Right: slide in from right (right-side content in split layouts) ── */
+  .sr--right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition:
+      opacity   0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--sr-delay, 0ms),
+      transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--sr-delay, 0ms);
+  }
+  .sr--right.sr-revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Reduced motion — skip all animations */
+  @media (prefers-reduced-motion: reduce) {
+    .sr--up,
+    .sr--blade,
+    .sr--fade,
+    .sr--left,
+    .sr--right {
+      opacity: 1;
+      transform: none;
+      clip-path: none;
+      transition: none;
+    }
+  }
