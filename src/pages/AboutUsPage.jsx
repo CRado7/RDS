@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import { metaData } from "../data/metaData";
 import ContentPageLayout from "../components/ContentPageLayout";
-import Picture from "../../public/profile-pic.png";
+import Picture from "../assets/profile-pic.png";
 import "../styles/AboutUsPage.css";
 
 const AboutUs = () => (
